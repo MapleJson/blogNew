@@ -1,0 +1,56 @@
+/* atree */
+.layui-atree{line-height: 26px;}
+.layui-atree li{position:relative;text-overflow: ellipsis; overflow:hidden; white-space: nowrap;}
+.layui-atree li a,
+.layui-atree li .layui-atree-spread{display: inline-block; vertical-align: top;font-size: 12px; height: 26px; display: inline; zoom:1; cursor: pointer;color: #c0c4cc}
+.layui-atree li a{font-size: 0;}
+.layui-atree li a i{font-size: 16px;}
+.layui-atree li a cite{padding: 0 6px; font-size: 14px; font-style: normal;color: #606266;}
+.layui-atree li i{padding-left: 6px; -moz-user-select: none;}
+.layui-atree li .layui-atree-check{font-size: 16px;color: #dcdfe6}
+.layui-atree li .layui-atree-check:hover{color: #409eff;}
+.layui-atree li .layui-atree-check.is-checked{color: #409eff;}
+.layui-atree li ul{ display:none;margin-left: 40px;}
+.layui-atree li .layui-atree-enter{line-height: 24px; border: 1px dotted #000;}
+.layui-atree-drag{display: none; position: absolute; left: -666px; top: -666px; background-color: #f2f2f2; padding: 5px 10px; border: 1px dotted #000; white-space: nowrap}
+.layui-atree-drag i{padding-right: 5px;}
+.layui-atree-node{position: relative;}
+.layui-atree-node:hover { background-color:#eee;}
+.layui-atree-node:hover .layui-atree-menu{display: block;}
+.layui-atree-menu{position: absolute;top:0;right: 10px;z-index:1024;display: none;}
+.layui-atree-menu span{margin-left: 10px;cursor: pointer;}
+.divATree {background-color: #fff;border: 1px solid #ccc;box-shadow: #ccc;border-radius: 5px;height: 400px;overflow: scroll;}
+/*图标展示*/
+.site-doc-icon{width: 1050px;background-color: #fff}
+.site-doc-icon li{cursor:pointer;display: inline-block; vertical-align: middle; width: 127px; height: 105px; line-height: 25px; padding: 20px 0; margin-right: -1px; margin-bottom: -1px; border: 1px solid #e2e2e2; font-size: 14px; text-align: center; color: #666; transition: all .3s; -webkit-transition: all .3s;}
+.site-doc-anim li{height: auto;}
+.site-doc-icon li .layui-icon{display: inline-block; font-size: 36px;}
+.site-doc-icon li .doc-icon-name,
+.site-doc-icon li .doc-icon-code{color: #c2c2c2;}
+.site-doc-icon li .doc-icon-code xmp{margin:0}
+.site-doc-icon li .doc-icon-fontclass{height: 40px; line-height: 20px; padding: 0 5px; font-size: 13px; color: #333; }
+.site-doc-icon li:hover{background-color: #f2f2f2; color: #000;}
+/*上传*/
+.layui-upload-img {width: 92px;height: 92px;margin: 0 10px 10px 0;}
+/*表单元素*/
+.layuiadmin-card-header-auto .layui-form-label {width: unset}
+.layuiadmin-card-header-auto .layui-input-block {float: left; margin-left: unset}
+.layui-form-item .layui-input-xxs {width: 200px}
+.layui-form-item .layui-input-xs {width: 300px}
+.layui-form-item .layui-input-sm {width: 400px}
+.layui-form-item .layui-input-ml {width: 500px}
+.layui-form-item .layui-input-xl {width: 600px}
+.layui-form-item .layui-input-xxl {width: 700px}
+.layui-form-item .layui-input-xxxl {width: 800px}
+/*表格元素*/
+.layui-table .layui-btn .layui-icon {margin-right: 0px}
+/*相册*/
+.cmdlist-container{background: #fff;border:1px solid transparent;}
+.cmdlist-container:hover{border:1px solid #e8e8e8;}
+.cmdlist-container img{width: 100%;}
+.cmdlist-text{padding:20px;}
+.cmdlist-text .info{height: 40px;font-size: 14px;line-height: 20px;width: 100%;overflow: hidden;color: #666;margin-bottom:10px;}
+.cmdlist-text .price{font-size: 14px;}
+.cmdlist-text .price b{margin-right: 20px;}
+.cmdlist-text .price p{display: inline-block;}
+.cmdlist-text .flow{text-align: right;float: right;}
