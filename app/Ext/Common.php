@@ -61,7 +61,7 @@ trait Common
         if (self::isUrl($src)) {
             return $src;
         }
-        return Storage::disk(config('app.upload.disk'))->url($src);
+        return Storage::disk(config('admin.upload.disk'))->url($src);
     }
 
     /**
