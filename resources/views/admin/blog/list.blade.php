@@ -186,7 +186,7 @@
                     , {title: '操作', align: 'center', fixed: 'right', minWidth: 150, toolbar: '#table-admin-data-do'}
                 ]]
                 , page: true
-                , limit: 30
+                , limit: 10
                 , limits: [10, 30, 50]
                 , height: 'full-180'
                 , text: {none: '暂无数据！'}
