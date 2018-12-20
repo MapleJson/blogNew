@@ -10,7 +10,7 @@ class LogController extends AdminController
 {
     public $methodColors = [
         'GET'    => 'green',
-        'POST'   => 'yellow',
+        'POST'   => 'orange',
         'PUT'    => 'blue',
         'DELETE' => 'red',
     ];
