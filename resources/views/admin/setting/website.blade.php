@@ -47,10 +47,8 @@
                         </div>
                         <div class="layui-form-item layui-form-text">
                             <label class="layui-form-label">一篇关于我的文章</label>
-                            <div class="layui-input-block">
-                                <textarea name="content" class="layui-textarea"
-                                          id="aboutMeContent">{{ $set->content }}</textarea>
-                            </div>
+                            <div class="layui-input-block" id="aboutMeContent"></div>
+                            <input type="hidden" name="content" value="{{ $set->content }}">
                         </div>
                         <div class="layui-form-item layui-form-text">
                             <label class="layui-form-label">微信号</label>
@@ -156,43 +154,22 @@
 @stop
 
 @section('script')
+    <script src="{{ asset('admin/modules/wangEditor.min.js') }}"></script>
     <script>
-        layui.use(['index', 'form', 'upload', 'layedit'], function () {
+        layui.use(['index', 'form', 'upload', 'wang'], function () {
             var $ = layui.$,
                 layer = layui.layer,
                 form = layui.form,
                 admin = layui.admin,
-                layedit = layui.layedit,
+                wang = layui.wang,
                 upload = layui.upload;
 
-            layedit.set({
-                uploadImage: {
-                    url: "{{ route('admin.editorUpload') }}" //接口url
-                    ,type: 'post' //默认post
-                }
-            });
-
-            var layEditor = layedit.build('aboutMeContent', {
-                tool: [
-                    "strong",
-                    "italic",
-                    "underline",
-                    "del",
-                    "|",
-                    "left",
-                    "center",
-                    "right",
-                    "|",
-                    "link",
-                    "unlink",
-                    "face",
-                    "image",
-                    "code"
-                ]
-            });
+            // wangEditor富文本编辑器
+            var contentEditor = wang('aboutMeContent', 'content');
+            contentEditor.txt.html(`{!! $set->content !!}`);
+            contentEditor.change();
 
             form.on('submit(setWebsite)', function (obj) {
-                layedit.sync(layEditor);
                 var data = obj.field;
                 var index = layer.msg('提交中，请稍候', {icon: 16, time: false, shade: 0.7});
                 admin.req({
