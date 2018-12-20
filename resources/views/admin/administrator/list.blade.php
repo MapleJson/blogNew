@@ -28,13 +28,6 @@
             <script type="text/html" id="avatarTpl">
                 <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.avatarUrl }}>
             </script>
-            <script type="text/html" id="stateTpl">
-                @{{#  if(d.state == 1){ }}
-                <button class="layui-btn layui-btn-xs">启用</button>
-                @{{#  } else { }}
-                <button class="layui-btn layui-btn-danger layui-btn-xs">停用</button>
-                @{{#  } }}
-            </script>
             <script type="text/html" id="table-admin-data-do">
                 <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i
                             class="layui-icon layui-icon-edit"></i></a>
@@ -97,7 +90,6 @@
                     , {field: 'name', title: '昵称', align: 'center', minWidth: 100}
                     , {field: 'avatarUrl', title: '头像', align: 'center', width: 80, toolbar: '#avatarTpl'}
                     , {field: 'email', title: '邮箱', align: 'center', minWidth: 100}
-                    , {field: 'state', sort: true, title: '状态', align: 'center', width: 80, toolbar: '#stateTpl'}
                     , {field: 'created_at', sort: true, title: '添加时间', align: 'center', minWidth: 80}
                     , {title: '操作', align: 'center', fixed: 'right', width: 100, toolbar: '#table-admin-data-do'}
                 ]]
