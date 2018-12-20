@@ -37,13 +37,13 @@ class LogController extends AdminController
             OperationLog::$where[] = ['user_id', '=', (int)$get['user_id']];
         }
         if (!empty($get['method'])) {
-            OperationLog::$where = ['method', '=', $get['method']];
+            OperationLog::$where[] = ['method', '=', $get['method']];
         }
         if (!empty($get['ip'])) {
-            OperationLog::$where = ['ip', '=', $get['ip']];
+            OperationLog::$where[] = ['ip', '=', $get['ip']];
         }
         if (!empty($get['path'])) {
-            OperationLog::$where = ['path', 'like', "%{$get['path']}%"];
+            OperationLog::$where[] = ['path', 'like', "%{$get['path']}%"];
         }
         $logs = OperationLog::getList();
         foreach ($logs as &$log) {
