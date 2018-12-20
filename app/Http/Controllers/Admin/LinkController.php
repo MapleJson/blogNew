@@ -33,10 +33,10 @@ class LinkController extends AdminController
         Link::$limit = $this->getPageOffset(self::limitParam());
         $get = self::getValidateParam('linkSearch');
         if (!empty($get['title'])) {
-            Link::$where = [['title', 'like', "%{$get['title']}%"]];
+            Link::$where[] = ['title', 'like', "%{$get['title']}%"];
         }
         if (!empty($get['domain'])) {
-            Link::$where = [['domain', 'like', "%{$get['domain']}%"]];
+            Link::$where[] = ['domain', 'like', "%{$get['domain']}%"];
         }
         empty($get['state']) ?: Link::$where['state'] = (int)$get['state'];
         $data = Link::getList();
