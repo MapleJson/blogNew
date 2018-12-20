@@ -27,6 +27,7 @@
                     <p>网名：{{ $about->authorName }} </p>
                     <p>职业：{{ $about->profession }} </p>
                     <p>邮箱：{{ $about->email }} </p>
+                    <p>GITHUB：<a href="https://github.com/MapleJson" target="_blank">https://github.com/MapleJson</a></p>
                     <p>个人微信：</p>
                     <p><img style="width: 260px;height: 260px;" src="{{ asset('common/images/wx.jpeg') }}"></p>
                 </div>
