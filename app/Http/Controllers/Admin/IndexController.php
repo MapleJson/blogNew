@@ -27,15 +27,32 @@ class IndexController extends AdminController
         $adminMenus         = AdminMenu::getList()->toArray();
         foreach ($adminMenus as $adminMenu) {
             if (!$adminMenu['parent_id']) {
+                $adminMenu['url'] = $this->getMenuUrl($adminMenu);
                 $menus[$adminMenu['id']] = $adminMenu;
             }
         }
         foreach ($adminMenus as $adminMenu) {
             if ($adminMenu['parent_id']) {
+                $adminMenu['url'] = $this->getMenuUrl($adminMenu);
                 $menus[$adminMenu['parent_id']]['child'][] = $adminMenu;
             }
         }
         return $this->responseView('layout', compact('menus'));
+    }
+
+    /**
+     * 获取菜单链接
+     * @param $menu
+     * @return mixed
+     */
+    private function getMenuUrl($menu)
+    {
+        if (!empty($menu['name'])) {
+            return config('app.secure') ?
+                str_replace('https:', '', route($menu['name'])) :
+                str_replace('http:', '', route($menu['name']));
+        }
+        return $menu['uri'];
     }
 
     /**

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>{!! config('admin.name')!!}</title>
+    <title>{!! config('admin.name') !!}</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -77,16 +77,12 @@
                         <cite>{!! $administrator->name !!}</cite>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a lay-href="{{ route('admin.userInfo') }}">修改信息</a></dd>
+                        <dd><a lay-href="{{ route('admin.userInfo') }}">基本资料</a></dd>
                         <dd><a lay-href="{{ route('admin.changePwd') }}">修改密码</a></dd>
                         <hr>
                         <dd style="text-align: center;"><a href="{{ route('admin.logout') }}">退出</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item layui-hide-xs">
-                    <div class="layadmin-null-space"></div>
-                </li>
-
             </ul>
         </div>
 
@@ -100,20 +96,19 @@
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
                     lay-filter="layadmin-system-side-menu">
                     @foreach($menus as $menu)
-                        <li data-name="{{ $menu['name'] }}" class="layui-nav-item">
-                            <a href="javascript:;"
-                               @if(!empty($menu['name']) || !empty($menu['uri']))
-                               lay-href="{{ !empty($menu['name']) ? route($menu['name']) : $menu['uri'] }}"
-                               @endif
-                               lay-tips="{{ $menu['title'] }}" lay-direction="2">
+                        <li data-name="page{{ $menu['id'] }}" class="layui-nav-item layui-nav-itemed">
+                            <a href="javascript:;" lay-tips="{{ $menu['title'] }}" lay-direction="2"
+                                @if(!empty($menu['url']))
+                                lay-href="{{ $menu['url'] }}"
+                                    @endif>
                                 <i class="layui-icon {{ $menu['icon'] ?? '' }}"></i>
                                 <cite>{{ $menu['title'] }}</cite>
                             </a>
                             @if(!empty($menu['child']))
                                 <dl class="layui-nav-child">
                                     @foreach($menu['child'] as $subMenu)
-                                        <dd data-name="{{ $subMenu['name'] }}">
-                                            <a lay-href="{{ !empty($subMenu['name']) ? route($subMenu['name']) : $subMenu['uri'] }}">{{ $subMenu['title'] }}</a>
+                                        <dd data-name="child_page{{ $menu['id'] }}">
+                                            <a lay-href="{{ $subMenu['url'] }}">{{ $subMenu['title'] }}</a>
                                         </dd>
                                     @endforeach
                                 </dl>
@@ -148,6 +143,7 @@
             </div>
         </div>
 
+
         <!-- 主体内容 -->
         <div class="layui-body" id="LAY_app_body">
             <div class="layadmin-tabsbody-item layui-show">
@@ -170,5 +166,3 @@
 </script>
 </body>
 </html>
-
-
