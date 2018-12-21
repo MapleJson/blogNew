@@ -60,7 +60,7 @@ Route::group([
     // 上传文件
     $router->post('upload', 'UploadController@upload')->name('admin.upload');
     $router->post('editorUpload', 'UploadController@editorUpload')->name('admin.editorUpload');
-    $router->post('bulkUpload', 'UploadController@bulkUpload')->name('admin.bulkUpload');
+    //$router->post('bulkUpload', 'UploadController@bulkUpload')->name('admin.bulkUpload');
     // 菜单操作
     $router->get('menu/list', 'MenuController@data')->name('admin.getMenus');
     $router->post('menu/create', 'MenuController@store')->name('admin.addMenu');
@@ -98,6 +98,16 @@ Route::group([
     $router->post('link/create', 'LinkController@store')->name('admin.addLink');
     $router->put('link/edit/{id}', 'LinkController@update')->name('admin.editLink');
     $router->delete('link/delete', 'LinkController@destroy')->name('admin.delLink');
+    // 相册操作
+    $router->get('travel/list', 'TravelController@data')->name('admin.getTravels');
+    $router->post('travel/create', 'TravelController@store')->name('admin.addTravel');
+    $router->put('travel/edit/{id}', 'TravelController@update')->name('admin.editTravel');
+    $router->delete('travel/delete', 'TravelController@destroy')->name('admin.delTravel');
+    // 照片操作
+    $router->get('photo/list', 'PhotoController@data')->name('admin.getPhotos');
+    $router->post('photo/create', 'PhotoController@store')->name('admin.addPhoto')->middleware('throttle:1000,1');
+    $router->put('photo/edit/{id}', 'PhotoController@update')->name('admin.editPhoto');
+    $router->delete('photo/delete', 'PhotoController@destroy')->name('admin.delPhoto');
     // 用户操作
     $router->get('front/list', 'FrontUserController@data')->name('admin.getFrontUsers');
     $router->put('front/edit/{id}', 'FrontUserController@update')->name('admin.editFrontUser');

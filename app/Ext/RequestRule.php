@@ -169,6 +169,33 @@ trait RequestRule
         'email'    => 'required|email',
     ];
 
+    public $travelSearchRule = [
+        'title' => 'nullable|string',
+        'state' => 'nullable|integer|in:0,1,2',
+    ];
+
+    public $travelStoreUpdateRule = [
+        'title'   => 'required|string',
+        'cover'   => 'required|string',
+        'summary' => 'required|string',
+        'state'   => 'required|integer|in:1,2',
+    ];
+
+    public $photoSearchRule = [
+        'id'    => 'required|integer|min:1',
+        'state' => 'nullable|integer|in:0,1,2',
+    ];
+
+    public $photoStoreRule = [
+        'travelId' => 'required|integer|min:1',
+        'file'     => 'required|file',
+    ];
+
+    public $photoUpdateRule = [
+        'summary' => 'required|string',
+        'state'   => 'required|integer|in:1,2',
+    ];
+
     public $logSearchRule = [
         'user_id' => 'nullable|integer|min:1',
         'method'  => 'nullable|string',
