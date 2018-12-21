@@ -445,6 +445,7 @@ CREATE TABLE `messages` (
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '回复人头像',
   `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '回复人名称',
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '回复内容',
+  `reply` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否为回复留言',
   `state` tinyint(4) NOT NULL DEFAULT '2' COMMENT '是否展示 1 展示 2 不展示',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
