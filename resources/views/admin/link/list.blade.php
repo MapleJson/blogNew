@@ -128,8 +128,8 @@
                     , {field: 'title', title: '标题', align: 'center', minWidth: 100}
                     , {field: 'logo', title: 'LOGO', align: 'center', width: 100, toolbar: '#logoTpl'}
                     , {field: 'domain', title: '链接', align: 'center', minWidth: 100}
-                    , {field: 'me', sort: true, title: '我的站群', align: 'center', minWidth: 80, toolbar: '#meTpl'}
-                    , {field: 'state', sort: true, title: '状态', align: 'center', minWidth: 80, toolbar: '#stateTpl'}
+                    , {field: 'me', sort: true, title: '我的站群', align: 'center', width: 100, toolbar: '#meTpl'}
+                    , {field: 'state', sort: true, title: '状态', align: 'center', width: 80, toolbar: '#stateTpl'}
                     , {field: 'created_at', sort: true, title: '添加时间', align: 'center', minWidth: 80}
                     , {title: '操作', align: 'center', fixed: 'right', width: 100, toolbar: '#table-admin-data-do'}
                 ]]
