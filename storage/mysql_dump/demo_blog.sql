@@ -424,6 +424,7 @@ CREATE TABLE `links` (
   `logo` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'logo链接',
   `title` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '站点名称',
   `summary` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '站点说明',
+  `me` tinyint(1) unsigned NOT NULL DEFAULT '2' COMMENT '是否是我的站群 1是 2否 默认2',
   `state` tinyint(4) NOT NULL DEFAULT '2' COMMENT '审核状态 1 通过 2 待审核 3 不通过',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
