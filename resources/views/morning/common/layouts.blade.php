@@ -32,14 +32,14 @@
                 <div id="mnav">
                     <h2><span class="navicon"></span></h2>
                     <ul>
-                        <li><a href="{{ route('home') }}">首页</a></li>
-                        <li><a href="{{ route('travels') }}">点滴</a></li>
-                        <li><a href="{{ route('blog') }}">博客</a></li>
-                        <li><a href="{{ route('whisper') }}">耳语</a></li>
-                        <li><a href="{{ route('about') }}">关于</a></li>
-                        <li><a href="{{ route('message') }}">留言</a></li>
-                        <li><a href="{{ route('links') }}">友链</a></li>
-                        <li><a href="http://maplejson.cn" target="_blank">简历</a></li>
+                        <li><a data-type="/home" href="{{ route('home') }}">首页</a></li>
+                        <li><a data-type="/travels" href="{{ route('travels') }}">点滴</a></li>
+                        <li><a data-type="/blog" href="{{ route('blog') }}">博客</a></li>
+                        <li><a data-type="/whisper" href="{{ route('whisper') }}">耳语</a></li>
+                        <li><a data-type="/about" href="{{ route('about') }}">关于</a></li>
+                        <li><a data-type="/message" href="{{ route('message') }}">留言</a></li>
+                        <li><a data-type="/links" href="{{ route('links') }}">友链</a></li>
+                        <li><a data-type="/home" href="http://maplejson.cn" target="_blank">简历</a></li>
                         @auth
                             <li class="login-qq"><a href="{{ route('logout') }}">
                                     <img src="{{ auth()->user()->avatar }}"
@@ -55,14 +55,14 @@
                 </div>
                 <nav class="topnav" id="topnav">
                     <ul>
-                        <li><a href="{{ route('home') }}">首页</a></li>
-                        <li><a href="{{ route('travels') }}">点滴</a></li>
-                        <li><a href="{{ route('blog') }}">博客</a></li>
-                        <li><a href="{{ route('whisper') }}">耳语</a></li>
-                        <li><a href="{{ route('about') }}">关于</a></li>
-                        <li><a href="{{ route('message') }}">留言</a></li>
-                        <li><a href="{{ route('links') }}">友链</a></li>
-                        <li><a href="http://maplejson.cn" target="_blank">简历</a></li>
+                        <li><a data-type="/home" href="{{ route('home') }}">首页</a></li>
+                        <li><a data-type="/travels" href="{{ route('travels') }}">点滴</a></li>
+                        <li><a data-type="/blog" href="{{ route('blog') }}">博客</a></li>
+                        <li><a data-type="/whisper" href="{{ route('whisper') }}">耳语</a></li>
+                        <li><a data-type="/about" href="{{ route('about') }}">关于</a></li>
+                        <li><a data-type="/message" href="{{ route('message') }}">留言</a></li>
+                        <li><a data-type="/links" href="{{ route('links') }}">友链</a></li>
+                        <li><a data-type="/home" href="http://maplejson.cn" target="_blank">简历</a></li>
                         @auth
                             <li class="login-qq"><a href="{{ route('logout') }}">
                                     <img src="{{ auth()->user()->avatar }}"
