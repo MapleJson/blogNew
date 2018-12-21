@@ -35,7 +35,7 @@
             <li><a href="http://maplejson.cn" target="_blank">简历</a></li>
             <li><a href="{{ route('links') }}">友链</a></li>
         </ul>
-        <div class="searchbox">
+        <div class="searchbox" style="display: none">
             <div id="search_bar" class="search_bar">
                 <form id="searchform" action="" method="post" name="searchform">
                     <input class="input" placeholder="想搜点什么呢..." type="text" name="keyboard" id="keyboard">
