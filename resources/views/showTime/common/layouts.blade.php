@@ -71,9 +71,11 @@
         <a href="{{ route('rss') }}" target="_blank"><i class="fa fa-rss"></i></a>
     </p>
     <p>
-        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="/">鄂ICP备18019316号</a>
         <a href="{{ route('links') }}" class="links">友情链接</a>
         <a href="{{ route('hutui') }}">中国博客联盟</a>
+    </p>
+    <p>
+        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="/">鄂ICP备18019316号</a>
     </p>
 </footer>
 <a href="#" class="cd-top">Top</a>
