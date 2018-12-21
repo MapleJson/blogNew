@@ -13,20 +13,13 @@ class Blog extends PublicModel
 
     protected $guarded = ['id'];
 
+    public static $orderBy = '`isTop` asc, `id` desc';
+
     public static $tagId = [];
 
     public function tags()
     {
         return $this->belongsToMany(Tag::class)->where('state', Code::ENABLED_STATUS);
-    }
-
-    public static function getList(int $type = Code::YES)
-    {
-        // 一般情况下新增的ID越大所以此处我用id，也可以按时间排序self::CREATED_AT
-        self::$orderBy = ['isTop', 'asc'];
-        return parent::getList($type)
-            ->orderBy('id', 'desc')
-            ->get();
     }
 
     /**

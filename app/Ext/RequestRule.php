@@ -126,6 +126,7 @@ trait RequestRule
     public $linkSearchRule = [
         'title'  => 'nullable|string',
         'domain' => 'nullable|string',
+        'me'     => 'nullable|integer|in:0,1,2',
         'state'  => 'nullable|integer|in:0,1,2',
     ];
 
@@ -134,6 +135,7 @@ trait RequestRule
         'logo'    => 'required|url',
         'summary' => 'required|string',
         'domain'  => 'required|url',
+        'me'      => 'required|integer|in:1,2',
         'state'   => 'required|integer|in:1,2',
     ];
 

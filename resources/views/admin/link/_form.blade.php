@@ -28,6 +28,13 @@
         </div>
     </div>
     <div class="layui-form-item">
+        <label class="layui-form-label">我的站群</label>
+        <div class="layui-input-inline">
+            <input type="radio" name="me" value="1" title="是">
+            <input type="radio" name="me" value="2" title="否" checked>
+        </div>
+    </div>
+    <div class="layui-form-item">
         <label class="layui-form-label">状态</label>
         <div class="layui-input-inline">
             <input type="radio" name="state" value="1" title="启用" checked>

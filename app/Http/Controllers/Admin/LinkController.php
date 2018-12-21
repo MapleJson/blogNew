@@ -31,7 +31,7 @@ class LinkController extends AdminController
     public function data()
     {
         Link::$limit = $this->getPageOffset(self::limitParam());
-        $get = self::getValidateParam('linkSearch');
+        $get         = self::getValidateParam('linkSearch');
         if (!empty($get['title'])) {
             Link::$where[] = ['title', 'like', "%{$get['title']}%"];
         }
@@ -39,6 +39,7 @@ class LinkController extends AdminController
             Link::$where[] = ['domain', 'like', "%{$get['domain']}%"];
         }
         empty($get['state']) ?: Link::$where['state'] = (int)$get['state'];
+        empty($get['me']) ?: Link::$where['me'] = (int)$get['me'];
         $data = Link::getList();
         $this->setCount(Link::getListCount());
         return $this->responseJson($data);

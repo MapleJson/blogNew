@@ -14,6 +14,13 @@ class Links extends FrontController
      */
     public function index()
     {
+        Link::_destroy();
+        Link::$where = [
+            'state' => Code::ENABLED_STATUS,
+            'me'    => Code::DISABLED_STATUS,
+        ];
+
+        self::$data['friends'] = Link::getList();
         return $this->responseView('links.index');
     }
 

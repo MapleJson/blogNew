@@ -42,6 +42,7 @@ Route::group([
     $router->get('carousel.html', 'CarouselController@index')->name('admin.carousel');
     $router->get('message.html', 'MessageController@index')->name('admin.message');
     $router->get('travels.html', 'TravelController@index')->name('admin.travels');
+    $router->get('photo/{id}.html', 'PhotoController@index')->name('admin.photos');
     $router->get('frontUsers.html', 'FrontUserController@index')->name('admin.frontUsers');
     $router->get('whispers.html', 'WhisperController@index')->name('admin.whispers');
     $router->get('icons.html', 'MenuController@icons')->name('admin.icons');

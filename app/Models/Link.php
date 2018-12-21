@@ -12,6 +12,6 @@ class Link extends PublicModel
 
     protected $guarded = ['id'];
 
-    public static $orderBy = ['id', 'desc'];
+    public static $orderBy = '`me` asc, `id` desc';
 
 }

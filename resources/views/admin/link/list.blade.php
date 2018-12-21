@@ -17,6 +17,16 @@
                     </div>
                 </div>
                 <div class="layui-inline">
+                    <label class="layui-form-label">我的站群</label>
+                    <div class="layui-input-block" style="width: 100px">
+                        <select name="me" class="layui-select">
+                            <option value="0">请选择</option>
+                            <option value="1">是</option>
+                            <option value="2">否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
                     <label class="layui-form-label">状态</label>
                     <div class="layui-input-block" style="width: 100px">
                         <select name="state" class="layui-select">
@@ -27,7 +37,8 @@
                     </div>
                 </div>
                 <div class="layui-inline">
-                    <button class="layui-btn layuiadmin-btn-forum-list" lay-submit lay-filter="LAY-admin-data-forum-search">
+                    <button class="layui-btn layuiadmin-btn-forum-list" lay-submit
+                            lay-filter="LAY-admin-data-forum-search">
                         <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
                     </button>
                 </div>
@@ -43,6 +54,13 @@
             <table id="LAY-admin-data-list" lay-filter="LAY-admin-data-list"></table>
             <script type="text/html" id="logoTpl">
                 <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.logo }}>
+            </script>
+            <script type="text/html" id="meTpl">
+                @{{#  if(d.me == 1){ }}
+                <button class="layui-btn layui-btn-xs">是</button>
+                @{{#  } else { }}
+                <button class="layui-btn layui-btn-danger layui-btn-xs">否</button>
+                @{{#  } }}
             </script>
             <script type="text/html" id="stateTpl">
                 @{{#  if(d.state == 1){ }}
@@ -73,13 +91,14 @@
                 , delUrl = "{{ route('admin.delLink') }}"
                 , addUrl = "{{ route('admin.addLink') }}"
                 , editUrl = '/admin/link/edit/'
-                , popArea = ['700px', '450px'];
+                , popArea = ['700px', '500px'];
 
             function setAddPop() {
                 $("#lay-admin-data-form input[name=title]").val('');
                 $("#lay-admin-data-form input[name=logo]").val('');
                 $("#lay-admin-data-form input[name=domain]").val('');
                 $("#lay-admin-data-form textarea[name=summary]").val('');
+                $("#lay-admin-data-form :radio[name='me'][value='2']").prop("checked", "checked");
                 $("#lay-admin-data-form :radio[name='state'][value='1']").prop("checked", "checked");
             }
 
@@ -88,6 +107,7 @@
                 $("#lay-admin-data-form input[name=logo]").val(filed.logo);
                 $("#lay-admin-data-form input[name=domain]").val(filed.domain);
                 $("#lay-admin-data-form textarea[name=summary]").val(filed.summary);
+                $("#lay-admin-data-form :radio[name='me'][value='" + filed.me + "']").prop("checked", "checked");
                 $("#lay-admin-data-form :radio[name='state'][value='" + filed.state + "']").prop("checked", "checked");
             }
 
@@ -108,6 +128,7 @@
                     , {field: 'title', title: '标题', align: 'center', minWidth: 100}
                     , {field: 'logo', title: 'LOGO', align: 'center', width: 100, toolbar: '#logoTpl'}
                     , {field: 'domain', title: '链接', align: 'center', minWidth: 100}
+                    , {field: 'me', sort: true, title: '我的站群', align: 'center', minWidth: 80, toolbar: '#meTpl'}
                     , {field: 'state', sort: true, title: '状态', align: 'center', minWidth: 80, toolbar: '#stateTpl'}
                     , {field: 'created_at', sort: true, title: '添加时间', align: 'center', minWidth: 80}
                     , {title: '操作', align: 'center', fixed: 'right', width: 100, toolbar: '#table-admin-data-do'}

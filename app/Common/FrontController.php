@@ -44,7 +44,10 @@ class FrontController extends PublicController
          * 友情链接
          */
         Link::_destroy();
-        Link::$where     = ['state' => Code::ENABLED_STATUS];
+        Link::$where     = [
+            'state' => Code::ENABLED_STATUS,
+            'me'    => Code::ENABLED_STATUS,
+        ];
         $config['links'] = Link::getList();
         /*
          * 关于我
