@@ -12,7 +12,10 @@
     <div class="timebox">
         <ul>
             @foreach($whispers as $whisper)
-                <li><span>{{ $whisper['created_at'] }}-{{ $whisper['author'] }}</span><i><a href="###">{!! $whisper['content'] !!}</a></i></li>
+                <li>
+                    <span>{{ $whisper['created_at'] }}-{{ $whisper['author'] }}</span><i><a
+                                href="javascript:;">{!! $whisper['content'] !!}</a></i>
+                </li>
             @endforeach
         </ul>
     </div>

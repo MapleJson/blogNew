@@ -3,7 +3,7 @@
 .htitle:after {content: "";position: absolute;width: 60px;height: 2px;content: "";background: #000;left: 0;bottom: 0;-moz-transition: all .5s ease;-webkit-transition: all .5s ease;transition: all .5s ease;}
 .hnav {float: right;}
 .friend_links {overflow: hidden;padding-top: 20px;}
-.friend_links li {width: 16.6%;float: left;text-align: center;line-height: 30px;margin-bottom: 10px;}
-.friend_links li a {border-radius: 3px;display: block;border: 1px solid #EBEBEB;margin: 0 5px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.friend_links li {width: auto;float: left;text-align: center;line-height: 30px;margin-bottom: 10px;}
+.friend_links li a {margin: 0 5px;padding: 0 15px;border-radius: 3px;display: block;border: 1px solid #EBEBEB;text-overflow: ellipsis;white-space: nowrap;}
 .friend_links li:hover a {box-shadow: 0 4px 10px -4px rgba(48, 63, 107, 0.20); background: rgba(34, 2, 33, 0.91); color: #fff }
 .apply_link li {margin-bottom: 5px;padding-left: 5px;}

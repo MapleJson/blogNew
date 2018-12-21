@@ -49,7 +49,7 @@
 .cmdlist-container:hover{border:1px solid #e8e8e8;}
 .cmdlist-container img{width: 100%;}
 .cmdlist-text{padding:20px;}
-.cmdlist-text .info{height: 40px;font-size: 14px;line-height: 20px;width: 100%;overflow: hidden;color: #666;margin-bottom:10px;}
+.cmdlist-text .info{height: auto;font-size: 14px;line-height: 20px;width: 100%;overflow: hidden;color: #666;margin-bottom:10px;}
 .cmdlist-text .price{font-size: 14px;}
 .cmdlist-text .price b{margin-right: 20px;}
 .cmdlist-text .price p{display: inline-block;}

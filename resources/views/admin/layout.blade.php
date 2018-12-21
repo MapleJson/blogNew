@@ -96,7 +96,7 @@
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
                     lay-filter="layadmin-system-side-menu">
                     @foreach($menus as $menu)
-                        <li data-name="page{{ $menu['id'] }}" class="layui-nav-item layui-nav-itemed">
+                        <li data-name="page{{ $menu['id'] }}" class="layui-nav-item">
                             <a href="javascript:;" lay-tips="{{ $menu['title'] }}" lay-direction="2"
                                 @if(!empty($menu['url']))
                                 lay-href="{{ $menu['url'] }}"
