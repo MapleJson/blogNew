@@ -31,7 +31,7 @@ class BlogController extends AdminController
     public function data()
     {
         Blog::$limit = $this->getPageOffset(self::limitParam());
-        $get = self::getValidateParam('blogSearch');
+        $get         = self::getValidateParam('blogSearch');
         if (!empty($get['title'])) {
             Blog::$where = [['title', 'like', "%{$get['title']}%"]];
         } else {
@@ -42,10 +42,22 @@ class BlogController extends AdminController
         $posts = Blog::getList();
         $this->setCount(Blog::getListCount());
         foreach ($posts as &$post) {
+            //unset($post['content']);
             $post->imgUrl = self::uploadImageUrl($post->img);
-            $post->tags   = $post->tags->pluck('name');
+            $post->tags = $post->tags->toArray();
         }
         return $this->responseJson($posts);
+    }
+
+    /**
+     * 如果列表卡可使用分次查询
+     * @param int $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(int $id)
+    {
+        $post = Blog::getOne($id);
+        return $this->responseJson($post);
     }
 
     /**

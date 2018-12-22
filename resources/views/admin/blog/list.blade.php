@@ -156,6 +156,11 @@
                 $("#lay-admin-data-form :radio[name='original'][value='" + filed.original + "']").prop("checked", "checked");
             }
 
+            function cancelPop() {
+                contentEditor.txt.clear();
+                contentEditor.change();
+            }
+
             // wangEditor富文本编辑器
             var contentEditor = wang('content-editor', 'content');
 

@@ -99,6 +99,9 @@ table.on('tool(LAY-admin-data-list)', function (obj) {
             , success: function (layero, index) {
                 (typeof(layerOpenSuccess) === 'function') && layerOpenSuccess()
             }
+            , cancel: function(index, layero){
+                (typeof(cancelPop) === 'function') && cancelPop()
+            }
         });
         updateData('PUT', editUrl + id);
     }

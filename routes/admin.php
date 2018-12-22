@@ -75,6 +75,7 @@ Route::group([
     $router->delete('carousel/delete', 'CarouselController@destroy')->name('admin.delCarousel');
     // 文章操作
     $router->get('blog/list', 'BlogController@data')->name('admin.getPosts');
+    $router->get('blog/show/{id}', 'BlogController@show')->name('admin.postShow');
     $router->post('blog/create', 'BlogController@store')->name('admin.addPost');
     $router->put('blog/edit/{id}', 'BlogController@update')->name('admin.editPost');
     $router->delete('blog/delete', 'BlogController@destroy')->name('admin.delPost');
