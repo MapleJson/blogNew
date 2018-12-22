@@ -3,7 +3,7 @@
 form.on('submit(LAY-admin-data-forum-search)', function (data) {
     var field = data.field;
 
-//执行重载
+    //执行重载
     table.reload('LAY-admin-data-list', {
         where: field
     });
@@ -37,6 +37,7 @@ function updateData(type, url) {
             , data: data.field
             , done: function (res) {
                 layer.msg(res.msg);
+                setAddPop(); //清除提交表单的数据
                 table.reload('LAY-admin-data-list'); //数据刷新
                 layer.closeAll(); //关闭弹层
             }
