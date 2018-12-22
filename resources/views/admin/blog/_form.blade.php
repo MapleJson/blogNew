@@ -30,6 +30,12 @@
         </div>
     </div>
     <div class="layui-form-item">
+        <label class="layui-form-label">视频示例</label>
+        <div class="layui-input-inline layui-input-xxxl">
+            <input style="border:none; color:red" class="layui-input" type="text" value='<iframe src="视频地址" style="width:100%;height:300px;"></iframe>'/>
+        </div>
+    </div>
+    <div class="layui-form-item">
         <label class="layui-form-label">文章内容</label>
         <div class="layui-input-inline layui-input-xxxl" id="content-editor">
         </div>
