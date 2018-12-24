@@ -12,7 +12,11 @@
     <div class="abox">
         <h2>博主简介</h2>
         <div class="biji-content" id="content">
-            {{ $about->authorName }}，{{ $about->mood }}
+            <div class="about-mood">
+                <strong>{!! $about->authorName !!}</strong>
+                {!! $about->mood !!}
+            </div>
+            {!! $about->content !!}
         </div>
         <div class="navlist">
             <ul>

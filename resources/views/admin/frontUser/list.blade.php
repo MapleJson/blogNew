@@ -66,9 +66,9 @@
                 , cols: [[
                     {type: 'checkbox', fixed: 'left'}
                     , {field: 'username', title: '用户名', align: 'center', minWidth: 100}
-                    , {field: 'githubId', title: 'GITHUB Id', align: 'center', minWidth: 100}
-                    , {field: 'qqOpenid', title: 'QQ OPEN Id', align: 'center', minWidth: 100}
-                    , {field: 'wbOpenId', title: 'WEI BO Id', align: 'center', minWidth: 100}
+                    , {field: 'githubId', title: 'GITHUB ID', align: 'center', minWidth: 100}
+                    , {field: 'qqOpenid', title: 'QQ OPENID', align: 'center', minWidth: 100}
+                    , {field: 'wbOpenId', title: '微博ID', align: 'center', minWidth: 100}
                     , {field: 'state', sort: true, title: '状态', align: 'center', width: 80, toolbar: '#stateTpl'}
                     , {field: 'created_at', sort: true, title: '添加时间', align: 'center', minWidth: 140}
                     , {title: '操作', align: 'center', fixed: 'right', width: 100, toolbar: '#table-admin-data-do'}
