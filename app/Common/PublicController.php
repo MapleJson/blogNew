@@ -30,7 +30,7 @@ class PublicController extends Controller
      * 设置默认分页
      * @param int $limit
      */
-    protected function setPageLimit(int $limit = 50)
+    protected function setPageLimit(int $limit = 10)
     {
         if (!request()->has('page')) {
             request()->offsetSet('page', 1);

@@ -21,7 +21,7 @@ class Whispers extends FrontController
     {
         self::$data['propose'] = FrontCommon::recommendBlog();
 
-        if ($this->siteConfig->template !== 'morning') {
+        if ($this->checkTemplate('!morning')) {
             list(self::$data['whispers'],
                 self::$data['pages'],
                 self::$data['current']

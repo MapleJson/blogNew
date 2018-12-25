@@ -159,4 +159,15 @@
 
 @section('js')
     <script src="{{ asset('common/js/social-share.min.js') }}"></script>
+    <script src="{{ asset('common/layui/layui.js') }}"></script>
+    <script>
+        layui.use('code', function () {
+            layui.code({
+                elem: 'pre'
+                , title: 'Code'
+                , skin: 'notepad'
+                , about: false
+            });
+        });
+    </script>
 @stop

@@ -20,7 +20,7 @@ class Index extends FrontController
         /*
          * 博客列表
          */
-        if ($this->siteConfig->template !== 'morning') {
+        if ($this->checkTemplate('!morning')) {
             list(self::$data['blogs'],
                 self::$data['pages'],
                 self::$data['current']

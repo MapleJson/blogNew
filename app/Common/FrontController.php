@@ -31,6 +31,25 @@ class FrontController extends PublicController
     }
 
     /**
+     * 判断模板
+     * @param string|array $template
+     * @return bool
+     */
+    protected function checkTemplate($template)
+    {
+        if (substr($template, 0, 1) === '!') {
+            return $this->siteConfig->template !== $template;
+        }
+        if (is_string($template)) {
+            return $this->siteConfig->template === $template;
+        }
+        if (is_array($template)) {
+            return in_array($this->siteConfig->template, $template, true);
+        }
+        return false;
+    }
+
+    /**
      * 统一视图返回
      *
      * @param string|null $view
