@@ -45,7 +45,8 @@
                     </div>
                 </div>
                 <div class="layui-inline">
-                    <button class="layui-btn layuiadmin-btn-forum-list" lay-submit lay-filter="LAY-admin-data-forum-search">
+                    <button class="layui-btn layuiadmin-btn-forum-list" lay-submit
+                            lay-filter="LAY-admin-data-forum-search">
                         <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
                     </button>
                 </div>
@@ -60,7 +61,9 @@
 
             <table id="LAY-admin-data-list" lay-filter="LAY-admin-data-list"></table>
             <script type="text/html" id="imgTpl">
-                <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.imgUrl }}>
+                <a href="javascript:;" lay-event="showImg">
+                    <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.imgUrl }}>
+                </a>
             </script>
             <script type="text/html" id="tagsTpl">
                 @{{#  layui.each(d.tags, function(index, tag){ }}
@@ -140,12 +143,18 @@
             }
 
             function setEditPop(filed) {
+                admin.req({
+                    url: '/admin/blog/show/' + filed.id
+                    , done: function (res) {
+                        console.log(res)
+                        contentEditor.txt.html(res.data.content);
+                        contentEditor.change();
+                    }
+                });
                 var tags = [];
                 $("#lay-admin-data-form input[name=title]").val(filed.title);
                 $("#lay-admin-data-form input[name=img]").val(filed.img);
                 $("#lay-admin-data-form textarea[name=summary]").val(filed.summary);
-                contentEditor.txt.html(filed.content);
-                contentEditor.change();
                 layui.each(filed.tags, function (index, tag) {
                     tags.push(tag.id);
                 });
@@ -154,6 +163,27 @@
                 $("#lay-admin-data-form :radio[name='isTop'][value='" + filed.isTop + "']").prop("checked", "checked");
                 $("#lay-admin-data-form :radio[name='recommend'][value='" + filed.recommend + "']").prop("checked", "checked");
                 $("#lay-admin-data-form :radio[name='original'][value='" + filed.original + "']").prop("checked", "checked");
+            }
+
+            function tableOnTool(obj) {
+                var data = obj.data;
+                if (obj.event === 'showImg') {
+                    layui.layer.photos({
+                        photos: {
+                            "title": data.title, //相册标题
+                            "id": data.id, //相册id
+                            "start": 0, //初始显示的图片序号，默认0
+                            "data": [   //相册包含的图片，数组格式
+                                {
+                                    "alt": data.title,
+                                    "pid": data.id, //图片id
+                                    "src": data.imgUrl, //原图地址
+                                    "thumb": "" //缩略图地址
+                                }
+                            ]
+                        } //格式见API文档手册页
+                    });
+                }
             }
 
             function cancelPop() {
@@ -184,8 +214,22 @@
                     , {field: 'tags', sort: true, title: '标签', align: 'center', minWidth: 150, toolbar: '#tagsTpl'}
                     , {field: 'state', sort: true, title: '发布', align: 'center', minWidth: 80, toolbar: '#stateTpl'}
                     , {field: 'isTop', sort: true, title: '置顶', align: 'center', minWidth: 80, toolbar: '#topTpl'}
-                    , {field: 'recommend', sort: true, title: '推荐', align: 'center', minWidth: 80, toolbar: '#recommendTpl'}
-                    , {field: 'original', sort: true, title: '原创', align: 'center', minWidth: 80, toolbar: '#originalTpl'}
+                    , {
+                        field: 'recommend',
+                        sort: true,
+                        title: '推荐',
+                        align: 'center',
+                        minWidth: 80,
+                        toolbar: '#recommendTpl'
+                    }
+                    , {
+                        field: 'original',
+                        sort: true,
+                        title: '原创',
+                        align: 'center',
+                        minWidth: 80,
+                        toolbar: '#originalTpl'
+                    }
                     , {field: 'comments', sort: true, title: '留言数', align: 'center', minWidth: 80}
                     , {field: 'read', sort: true, title: '点击数', align: 'center', minWidth: 80}
                     , {title: '操作', align: 'center', fixed: 'right', minWidth: 150, toolbar: '#table-admin-data-do'}

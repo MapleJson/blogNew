@@ -10,7 +10,9 @@
 
             <table id="LAY-admin-data-list" lay-filter="LAY-admin-data-list"></table>
             <script type="text/html" id="imgTpl">
-                <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.imgUrl }}>
+                <a href="javascript:;" lay-event="showImg">
+                    <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.imgUrl }}>
+                </a>
             </script>
             <script type="text/html" id="typeTpl">
                 @{{#  if(d.type == 1){ }}
@@ -66,6 +68,27 @@
                 $("input[name=img]").val(filed.img);
                 $("#type-select").val(filed.type);
                 $(":radio[name='state'][value='" + filed.state + "']").prop("checked", "checked");
+            }
+
+            function tableOnTool(obj) {
+                var data = obj.data;
+                if (obj.event === 'showImg') {
+                    layui.layer.photos({
+                        photos: {
+                            "title": data.title, //相册标题
+                            "id": data.id, //相册id
+                            "start": 0, //初始显示的图片序号，默认0
+                            "data": [   //相册包含的图片，数组格式
+                                {
+                                    "alt": data.title,
+                                    "pid": data.id, //图片id
+                                    "src": data.imgUrl, //原图地址
+                                    "thumb": "" //缩略图地址
+                                }
+                            ]
+                        } //格式见API文档手册页
+                    });
+                }
             }
 
             //用户管理
