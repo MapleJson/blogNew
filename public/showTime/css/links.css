@@ -7,3 +7,9 @@
 .friend_links li a {margin: 0 5px;border-radius: 3px;display: block;border: 1px solid #EBEBEB;text-overflow: ellipsis;white-space: nowrap;overflow: hidden}
 .friend_links li:hover a {box-shadow: 0 4px 10px -4px rgba(48, 63, 107, 0.20); background: rgba(34, 2, 33, 0.91); color: #fff }
 .apply_link li {margin-bottom: 5px;padding-left: 5px;}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .friend_links li {width: 30%;}
+}
+@media only screen and (max-width: 479px) {
+    .friend_links li {width: 50%;}
+}
