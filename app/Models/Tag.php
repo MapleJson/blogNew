@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Common\PublicModel;
+use App\Ext\Code;
 
 class Tag extends PublicModel
 {
@@ -19,9 +20,7 @@ class Tag extends PublicModel
     public function blog()
     {
         return $this->belongsToMany(Blog::class)
-            ->where(self::$pivot)
-            ->orderBy('isTop', 'asc')
-            ->orderBy('id', 'desc');
+            ->where('state', Code::ENABLED_STATUS);
     }
 
     /**

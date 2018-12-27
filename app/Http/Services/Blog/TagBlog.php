@@ -25,23 +25,41 @@ class TagBlog extends FrontController
         /*
          * 标签
          */
-        Tag::$pivot = ['tag_id' => $tag];
-
         self::$data['tags'] = FrontCommon::getTags();
 
-        foreach (self::$data['tags'] as $tag) {
-            foreach ($tag->blog as $item) {
-                $item->img = self::uploadImageUrl($item->img);
-
-                self::$data['blogs'][] = $item;
-            }
-        }
+        list(self::$data['blogs'],
+            self::$data['limit'],
+            self::$data['pages'],
+            self::$data['current']
+            ) = $this->getTagBlog($tag);
         /*
          * 站长推荐
          */
         self::$data['propose'] = FrontCommon::recommendBlog();
 
         return $this->responseView('blog.index');
+    }
+
+    private function getTagBlog(int $id)
+    {
+        $this->setPageLimit();
+        $limit = $this->getPageOffset(self::limitParam());
+        $tag   = Tag::getOne($id);
+        $posts = $tag->blog()
+            ->orderBy('isTop', 'asc')
+            ->orderBy('id', 'desc')
+            ->limit($limit['limit'])
+            ->offset($limit['offset'])
+            ->get();
+        foreach ($posts as &$post) {
+            $post->img = self::uploadImageUrl($post->img);
+        }
+        return [
+            $posts,
+            $limit['limit'],
+            ceil($tag->blog()->count() / $limit['limit']),
+            $limit['page']
+        ];
     }
 
 }

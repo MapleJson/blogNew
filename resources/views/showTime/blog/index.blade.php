@@ -54,13 +54,13 @@
                         @if($page == $current)
                             &nbsp;<b>{{ $page }}</b>
                         @else
-                            &nbsp;<a href="{{ route('blog') }}?page={{ $page }}">{{ $page }}</a>
+                            &nbsp;<a href="?page={{ $page }}">{{ $page }}</a>
                         @endif
                     @endfor
                     @if($current < $pages)
-                        &nbsp;<a href="{{ route('blog') }}?page={{ $current + 1 }}">下一页</a>
+                        &nbsp;<a href="?page={{ $current + 1 }}">下一页</a>
                     @endif
-                    &nbsp;<a href="{{ route('blog') }}?page={{ $pages }}">尾页</a>
+                    &nbsp;<a href="?page={{ $pages }}">尾页</a>
                 </div>
             @endif
         @endif

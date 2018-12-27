@@ -22,6 +22,7 @@ class Index extends FrontController
          */
         if ($this->checkTemplate('!morning')) {
             list(self::$data['blogs'],
+                self::$data['limit'],
                 self::$data['pages'],
                 self::$data['current']
                 ) = $this->getBlog();
@@ -47,7 +48,7 @@ class Index extends FrontController
     private function getBlog()
     {
         $this->setPageLimit();
-        Blog::$limit = $limit =$this->getPageOffset(self::limitParam());
+        Blog::$limit = $limit = $this->getPageOffset(self::limitParam());
         $posts       = Blog::getList();
         /*
          * 分页
@@ -58,7 +59,12 @@ class Index extends FrontController
         foreach ($posts as &$post) {
             $post->img = self::uploadImageUrl($post->img);
         }
-        return [$posts, $pages, $limit['page']];
+        return [
+            $posts,
+            $limit['limit'],
+            $pages,
+            $limit['page']
+        ];
     }
 
     /**
