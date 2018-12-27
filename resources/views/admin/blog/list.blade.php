@@ -146,7 +146,6 @@
                 admin.req({
                     url: '/admin/blog/show/' + filed.id
                     , done: function (res) {
-                        console.log(res)
                         contentEditor.txt.html(res.data.content);
                         contentEditor.change();
                     }
@@ -214,22 +213,8 @@
                     , {field: 'tags', sort: true, title: '标签', align: 'center', minWidth: 150, toolbar: '#tagsTpl'}
                     , {field: 'state', sort: true, title: '发布', align: 'center', minWidth: 80, toolbar: '#stateTpl'}
                     , {field: 'isTop', sort: true, title: '置顶', align: 'center', minWidth: 80, toolbar: '#topTpl'}
-                    , {
-                        field: 'recommend',
-                        sort: true,
-                        title: '推荐',
-                        align: 'center',
-                        minWidth: 80,
-                        toolbar: '#recommendTpl'
-                    }
-                    , {
-                        field: 'original',
-                        sort: true,
-                        title: '原创',
-                        align: 'center',
-                        minWidth: 80,
-                        toolbar: '#originalTpl'
-                    }
+                    , {field: 'recommend', sort: true, title: '推荐', align: 'center', minWidth: 80, toolbar: '#recommendTpl'}
+                    , {field: 'original', sort: true, title: '原创', align: 'center', minWidth: 80, toolbar: '#originalTpl'}
                     , {field: 'comments', sort: true, title: '留言数', align: 'center', minWidth: 80}
                     , {field: 'read', sort: true, title: '点击数', align: 'center', minWidth: 80}
                     , {title: '操作', align: 'center', fixed: 'right', minWidth: 150, toolbar: '#table-admin-data-do'}
@@ -254,6 +239,7 @@
 
             formSelects.config('select-tags', {
                 type: 'get',                //请求方式: post, get, put, delete...
+                searchUrl: '{{ route('admin.getTags', 1) }}',
                 searchName: 'name',         //自定义搜索内容的key值
                 keyName: 'name',            //自定义返回数据中name的key, 默认 name
                 keyVal: 'id',               //自定义返回数据中value的key, 默认 value
