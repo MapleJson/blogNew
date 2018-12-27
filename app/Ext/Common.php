@@ -61,7 +61,12 @@ trait Common
         if (self::isUrl($src)) {
             return $src;
         }
-        return Storage::disk(config('admin.upload.disk'))->url($src);
+        $disk = Storage::disk(config('admin.upload.disk'));
+        if (config('admin.upload.disk') === 'qiniu') {
+            return $disk->getDriver()->downloadUrl($src, 'https');
+        }
+
+        return $disk->url($src);
     }
 
     /**
