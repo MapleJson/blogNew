@@ -38,7 +38,7 @@ class FrontController extends PublicController
     protected function checkTemplate($template)
     {
         if (substr($template, 0, 1) === '!') {
-            return $this->siteConfig->template !== $template;
+            return $this->siteConfig->template !== substr($template, 1);
         }
         if (is_string($template)) {
             return $this->siteConfig->template === $template;
