@@ -128,7 +128,7 @@ color: #d1aa56;
 
 
 /*留言*/
-.message .item{padding:0;background: #141412; background:rgba(255,255,255,0.2); filter:Alpha(opacity=200);}
+.message .item{padding:0 50px;background: #141412; background:rgba(255,255,255,0.2); filter:Alpha(opacity=200);}
 .message .item .layui-card{background:transparent;}
 .message .item .layui-card .layui-card-header{border-bottom-color:#666465; padding: 40px 50px 27px 50px; height: auto;}
 .message .item .layui-card .layui-card-header .layui-form-item,.message .item .layui-card .layui-card-header .layui-input-block{margin:0;}
