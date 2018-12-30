@@ -137,6 +137,8 @@
                                     selected @endif>morning</option>
                                     <option value="showTime" @if($set->template === 'showTime')
                                     selected @endif>showTime</option>
+                                    <option value="quiet" @if($set->template === 'quiet')
+                                    selected @endif>quiet</option>
                                 </select>
                             </div>
                         </div>
