@@ -33,7 +33,7 @@
         </div>
         @foreach($blogs as $blog)
             <div class="item">
-                <img src="{{ $blog->img }}" alt="">
+                <img style="width: 100%;" src="{{ $blog->img }}" alt="">
                 <div class="item-content">
                     <h3>
                         <span class="text-blue">@if($blog->original === 1)【原创】@else
