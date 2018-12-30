@@ -23,6 +23,7 @@ class Whispers extends FrontController
 
         if ($this->checkTemplate('!morning')) {
             list(self::$data['whispers'],
+                self::$data['limit'],
                 self::$data['pages'],
                 self::$data['current']
                 ) = $this->getWhispers();
@@ -69,7 +70,12 @@ class Whispers extends FrontController
         $pages = ceil($count / Whisper::$limit['limit']);
         Whisper::_destroy();
 
-        return [$data, $pages, $limit['page']];
+        return [
+            $data,
+            $limit['limit'],
+            $pages,
+            $limit['page']
+        ];
     }
 
 }
