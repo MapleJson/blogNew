@@ -173,6 +173,9 @@ color: #d1aa56;
 .article1 .item1 .btn-box{text-align: center; margin: 50px 0;}
 .article1 .item1 .btn-box .layui-btn{background:#fff; color: #000;}
 
+footer{margin-top: 20px;}
+footer p{text-align: center; color: white;}
+footer p a{color: white;}
 
 @media screen and (max-width: 1800px){
   .main .item img{margin-bottom: 10px;}

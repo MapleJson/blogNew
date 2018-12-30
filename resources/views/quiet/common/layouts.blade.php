@@ -68,6 +68,15 @@
     {{--</form>--}}
 {{--</div>--}}
 
+<!-- 底部内容 -->
+<footer>
+    <p>
+        <a href="https://wpa.qq.com/msgrd?v=3&amp;uin={{ $about->qq }}&amp;site=qq&amp;menu=yes" target="_blank"
+           title="928046320"><i class="layui-icon layui-icon-login-qq"></i></a>&nbsp;
+        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="/">鄂ICP备18019316号</a>
+    </p>
+</footer>
+
 <script src="{{ asset('common/layui/layui.js') }}"></script>
 <!--[if lt IE 9]>
 <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
