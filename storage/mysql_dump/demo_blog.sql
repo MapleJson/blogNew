@@ -582,4 +582,17 @@ CREATE TABLE `whispers` (
   KEY `whispers_state_index` (`state`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- ----------------------------
+-- Table structure for templates
+-- ----------------------------
+DROP TABLE IF EXISTS `templates`;
+CREATE TABLE `templates` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '模板名称',
+  `state` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '是否启用 1 启用 2 不启用',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 SET FOREIGN_KEY_CHECKS = 1;
