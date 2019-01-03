@@ -133,12 +133,10 @@
                             <label class="layui-form-label">模板选择</label>
                             <div class="layui-input-block" style="width: 120px;">
                                 <select name="template">
-                                    <option value="morning" @if($set->template === 'morning')
-                                    selected @endif>morning</option>
-                                    <option value="showTime" @if($set->template === 'showTime')
-                                    selected @endif>showTime</option>
-                                    <option value="quiet" @if($set->template === 'quiet')
-                                    selected @endif>quiet</option>
+                                    @foreach($templates as $template)
+                                    <option value="{{ $template->name }}" @if($set->template === $template->name)
+                                    selected @endif>{{ $template->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

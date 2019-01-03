@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Common\AdminController;
 use App\Ext\Code;
 use App\Models\About;
+use App\Models\Template;
 
 class SettingController extends AdminController
 {
@@ -14,7 +15,9 @@ class SettingController extends AdminController
         if (!empty($set->weChatQR)) {
             $set->weChatQRImg = self::uploadImageUrl($set->weChatQR);
         }
-        return $this->responseView('setting.website', compact('set'));
+        Template::$where = ['state' => Code::ENABLED_STATUS];
+        $templates       = Template::getList();
+        return $this->responseView('setting.website', compact('set', 'templates'));
     }
 
     /**

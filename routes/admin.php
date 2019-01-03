@@ -46,6 +46,7 @@ Route::group([
     $router->get('frontUsers.html', 'FrontUserController@index')->name('admin.frontUsers');
     $router->get('whispers.html', 'WhisperController@index')->name('admin.whispers');
     $router->get('icons.html', 'MenuController@icons')->name('admin.icons');
+    $router->get('template.html', 'TemplateController@index')->name('admin.template');
     /*
      * 内页页面路由
      */
@@ -109,6 +110,11 @@ Route::group([
     $router->post('photo/create', 'PhotoController@store')->name('admin.addPhoto')->middleware('throttle:1000,1');
     $router->put('photo/edit/{id}', 'PhotoController@update')->name('admin.editPhoto');
     $router->delete('photo/delete', 'PhotoController@destroy')->name('admin.delPhoto');
+    // 模板操作
+    $router->get('template/list', 'TemplateController@data')->name('admin.getTemplates');
+    $router->post('template/create', 'TemplateController@store')->name('admin.addTemplate');
+    $router->put('template/edit/{id}', 'TemplateController@update')->name('admin.editTemplate');
+    $router->delete('template/delete', 'TemplateController@destroy')->name('admin.delTemplate');
     // 用户操作
     $router->get('front/list', 'FrontUserController@data')->name('admin.getFrontUsers');
     $router->put('front/edit/{id}', 'FrontUserController@update')->name('admin.editFrontUser');

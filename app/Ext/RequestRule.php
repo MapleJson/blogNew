@@ -202,4 +202,13 @@ trait RequestRule
         'path'    => 'nullable|string',
         'ip'      => 'nullable|ip',
     ];
+
+    public $templateSearchRule = [
+        'state' => 'nullable|integer|in:0,1,2',
+    ];
+
+    public $templateStoreUpdateRule = [
+        'name'  => 'required|string',
+        'state' => 'required|integer|in:1,2',
+    ];
 }
