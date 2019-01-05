@@ -98,7 +98,7 @@ color: #d1aa56;
 .article-right-content{width: 13.5%; position: absolute; right: 109px; top: 242px; box-sizing: border-box; padding:25px;background: #141412; background: rgba(255,255,255,0.2); filter:Alpha(opacity=200);}
 .article-right-content h3{font-size: 16px; line-height: 30px; color: #fff;}
 .article-right-content li{margin: 7px 5px 0 0; float: left;}
-
+.mood-details .item-content blockquote { display: block;border-left: 8px solid #0C0C0C;padding: 5px 10px;margin: 10px 0;line-height: 1.4;font-size: 100%;background-color: #3F3F3F;color: #C2BE9E; }
 
 
 /*作品*/
