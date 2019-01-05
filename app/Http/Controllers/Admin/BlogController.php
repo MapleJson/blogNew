@@ -44,7 +44,7 @@ class BlogController extends AdminController
         foreach ($posts as &$post) {
             unset($post['content']);
             $post->imgUrl = self::uploadImageUrl($post->img);
-            $post->tags = $post->tags->toArray();
+            $post->tags   = $post->tags->toArray();
         }
         return $this->responseJson($posts);
     }
@@ -72,6 +72,9 @@ class BlogController extends AdminController
 
     public function formatModelData(string $type = 'store')
     {
+        if (empty(Blog::$data['img'])) {
+            unset(Blog::$data['img']);
+        }
         Blog::$data['authorName']  = auth('admin')->user()->username;
         Blog::$data['authorEmail'] = auth('admin')->user()->email;
         Blog::$tagId               = explode(',', Blog::$data['tags']);

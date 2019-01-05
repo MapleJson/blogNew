@@ -94,7 +94,7 @@ trait RequestRule
     public $blogStoreUpdateRule = [
         'title'     => 'required|string',
         'tags'      => 'required|string',
-        'img'       => 'required|string',
+        'img'       => 'nullable|string',
         'summary'   => 'required|string',
         'content'   => 'required|string',
         'isTop'     => 'required|integer|in:1,2',
