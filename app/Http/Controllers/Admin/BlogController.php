@@ -43,7 +43,7 @@ class BlogController extends AdminController
         $this->setCount(Blog::getListCount());
         foreach ($posts as &$post) {
             unset($post['content']);
-            $post->imgUrl = self::uploadImageUrl($post->img);
+            $post->imgUrl = empty($post->img) ? '' : self::uploadImageUrl($post->img);
             $post->tags   = $post->tags->toArray();
         }
         return $this->responseJson($posts);

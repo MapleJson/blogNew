@@ -62,7 +62,9 @@
             <table id="LAY-admin-data-list" lay-filter="LAY-admin-data-list"></table>
             <script type="text/html" id="imgTpl">
                 <a href="javascript:;" lay-event="showImg">
+                    @{{# if(d.imgUrl){ }}
                     <img style="display: inline-block; width: 50%; height: 100%;" src=@{{ d.imgUrl }}>
+                    @{{# } }}
                 </a>
             </script>
             <script type="text/html" id="tagsTpl">
@@ -213,8 +215,22 @@
                     , {field: 'tags', sort: true, title: '标签', align: 'center', minWidth: 150, toolbar: '#tagsTpl'}
                     , {field: 'state', sort: true, title: '发布', align: 'center', minWidth: 80, toolbar: '#stateTpl'}
                     , {field: 'isTop', sort: true, title: '置顶', align: 'center', minWidth: 80, toolbar: '#topTpl'}
-                    , {field: 'recommend', sort: true, title: '推荐', align: 'center', minWidth: 80, toolbar: '#recommendTpl'}
-                    , {field: 'original', sort: true, title: '原创', align: 'center', minWidth: 80, toolbar: '#originalTpl'}
+                    , {
+                        field: 'recommend',
+                        sort: true,
+                        title: '推荐',
+                        align: 'center',
+                        minWidth: 80,
+                        toolbar: '#recommendTpl'
+                    }
+                    , {
+                        field: 'original',
+                        sort: true,
+                        title: '原创',
+                        align: 'center',
+                        minWidth: 80,
+                        toolbar: '#originalTpl'
+                    }
                     , {field: 'comments', sort: true, title: '留言数', align: 'center', minWidth: 80}
                     , {field: 'read', sort: true, title: '点击数', align: 'center', minWidth: 80}
                     , {title: '操作', align: 'center', fixed: 'right', minWidth: 150, toolbar: '#table-admin-data-do'}
