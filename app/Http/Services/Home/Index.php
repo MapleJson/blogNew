@@ -58,7 +58,9 @@ class Index extends FrontController
         $posts       = Blog::getList();
         Blog::_destroy();
         foreach ($posts as &$post) {
-            $post->img = self::uploadImageUrl($post->img);
+            if (!empty($post->img)) {
+                $post->img = self::uploadImageUrl($post->img);
+            }
         }
         return $posts;
     }
