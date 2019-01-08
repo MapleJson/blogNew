@@ -13,6 +13,7 @@
 .news_content p { overflow: hidden; padding-bottom: 4px; padding-top: 6px; word-wrap: break-word; }
 .news_con p {text-indent: 2em;}
 .news_con blockquote { display: block;border-left: 8px solid #0C0C0C;padding: 5px 10px;margin: 10px 0;line-height: 1.4;font-size: 100%;background-color: #3F3F3F;color: #C2BE9E; }
+.news_con pre {white-space: pre-wrap;word-wrap: break-word;}
 .tags a { background: #F4650E; padding: 3px 8px; margin: 0 5px 0 0; color: #fff; display:block ; float:left}
 .tags { width:100%; overflow:hidden; clear:both}
 .infosbox img { max-width: 650px; height: auto; display: inline-block}
