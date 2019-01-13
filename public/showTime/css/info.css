@@ -16,7 +16,7 @@
 .news_con pre {white-space: pre-wrap;word-wrap: break-word;}
 .tags a { background: #F4650E; padding: 3px 8px; margin: 0 5px 0 0; color: #fff; display:block ; float:left}
 .tags { width:100%; overflow:hidden; clear:both}
-.infosbox img { max-width: 650px; height: auto; display: inline-block}
+.infosbox img { width:95%; max-width: 650px; height: auto; display: inline-block}
 .share { padding: 20px; text-align: center;}
 .nextinfo { line-height: 24px; width: 100%; overflow: hidden; margin: 20px 0 }/*上一篇下一篇*/
 .nextinfo p { padding: 4px 10px; border-radius: 5px; }
