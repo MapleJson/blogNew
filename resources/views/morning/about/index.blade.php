@@ -4,6 +4,12 @@
     秋枫阁-关于我
 @stop
 
+@section('css')
+    <style>
+        .news_infos img {width: unset;}
+    </style>
+@stop
+
 @section('breadSpan')
     昨夜星辰昨夜风，画楼西畔桂堂东。身无彩凤双飞翼，心有灵犀一点通。
 @stop
