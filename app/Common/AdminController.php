@@ -63,7 +63,7 @@ class AdminController extends PublicController
     }
 
     /**
-     * 新增菜单
+     * 新增数据
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -80,7 +80,7 @@ class AdminController extends PublicController
     }
 
     /**
-     * 编辑菜单信息
+     * 编辑数据
      * @param int $id
      * @return \Illuminate\Http\JsonResponse
      */
@@ -98,7 +98,7 @@ class AdminController extends PublicController
     }
 
     /**
-     * 删除菜单
+     * 删除数据
      *
      * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
