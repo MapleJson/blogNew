@@ -1,5 +1,10 @@
 # blog
 
+#### 示例
+[https://52zoe.com](https://52zoe.com)
+
+[https://52zoe.cn](https://52zoe.cn)
+
 ### 环境要求
 
 #### PHP环境
