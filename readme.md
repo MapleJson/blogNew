@@ -29,7 +29,7 @@
 
 ```
 
-git clone https://github.com/MapleJson/blog.git
+git clone https://github.com/MapleJson/blogNew.git
 
 cd blog
 
