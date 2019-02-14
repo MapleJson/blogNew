@@ -59,6 +59,7 @@
                         <li><a data-type="/home" href="{{ route('home') }}">首页</a></li>
                         <li><a data-type="/travels" href="{{ route('travels') }}">点滴</a></li>
                         <li><a data-type="/blog" href="{{ route('blog') }}">博客</a></li>
+                        <li><a data-type="/blog" href="{{ route("tags", 6) }}">学习</a></li>
                         <li><a data-type="/whisper" href="{{ route('whisper') }}">耳语</a></li>
                         <li><a data-type="/about" href="{{ route('about') }}">关于</a></li>
                         <li><a data-type="/message" href="{{ route('message') }}">留言</a></li>
