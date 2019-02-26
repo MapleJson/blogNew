@@ -13,7 +13,7 @@
         <ul>
             @foreach($whispers as $whisper)
                 <li>
-                    <span>{{ $whisper['created_at'] }}-{{ $whisper['author'] }}</span><i><a
+                    <span>{{ $whisper['created_at'] }}</span><i><a
                                 href="javascript:;">{!! $whisper['content'] !!}</a></i>
                 </li>
             @endforeach

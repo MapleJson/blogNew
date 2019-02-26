@@ -1,6 +1,6 @@
  @charset "gb2312";
 .timebox { background: #FFF; padding: 30px }
-.timebox span { position: relative; line-height: 32px; padding-right: 40px; color: #999;width: 125px; display: inline-block; }
+.timebox span { position: relative; line-height: 32px; padding-right: 40px; color: #999;width: 68px; display: inline-block; }
 .timebox span:after { position: absolute; content: ""; width: 2px; height: 40px; background: #e0dfdf; right: 18px }
 .timebox li { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .timebox li i { position: relative; font-style: normal }
