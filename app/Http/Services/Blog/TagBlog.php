@@ -52,7 +52,9 @@ class TagBlog extends FrontController
             ->offset($limit['offset'])
             ->get();
         foreach ($posts as &$post) {
-            $post->img = self::uploadImageUrl($post->img);
+            if (!empty($post->img)) {
+                $post->img = self::uploadImageUrl($post->img);
+            }
         }
         return [
             $posts,
