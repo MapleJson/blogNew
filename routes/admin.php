@@ -30,6 +30,7 @@ Route::group([
     /*
      * 后台布局--菜单路由
      */
+    $router->get(config('admin.home'), 'IndexController@redirect');
     $router->get('home.html', 'IndexController@layout')->name('admin.layout');
     $router->get('index.html', 'IndexController@index')->name('admin.index');
     $router->get('administrators.html', 'AdministratorController@index')->name('admin.administrators');

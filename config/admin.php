@@ -39,4 +39,6 @@ return [
         ],
     ],
 
+    'home' => env('HOME_ROUTE', '520'),
+
 ];

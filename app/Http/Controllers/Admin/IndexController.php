@@ -14,6 +14,11 @@ use App\Models\AdminMenu;
  */
 class IndexController extends AdminController
 {
+    public function redirect()
+    {
+        return redirect(route('admin.layout'));
+    }
+
     /**
      * 后台布局
      *
