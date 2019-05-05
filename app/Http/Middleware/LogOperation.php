@@ -32,6 +32,7 @@ class LogOperation
             } catch (\Exception $exception) {
                 // pass
             }
+            OperationLog::_destroy();
         }
 
         return $next($request);
