@@ -26,6 +26,7 @@ class AppletsController extends FrontController
 
         $posts = Blog::getList();
         foreach ($posts as $key => &$post) {
+            unset($post->content);
             $post->img = self::uploadImageUrl($post->img);
         }
         /*
@@ -36,6 +37,16 @@ class AppletsController extends FrontController
         self::$response['pages'] = ceil($count / Blog::$limit['limit']);
 
         return $this->responseJson($posts);
+    }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function detail()
+    {
+        $get = self::getValidateParam(__FUNCTION__);
+        $posts = Blog::getOne((int)$get['id']);
+        return $this->responseJson(['content' => $posts->content]);
     }
 
     /**

@@ -29,6 +29,10 @@ trait RequestRule
         'id' => 'required|integer|min:1',
     ];
 
+    public $detailRule = [
+        'id' => 'required|integer|min:1',
+    ];
+
     public $updatePwdRule = [
         'password' => 'required|confirmed|min:6|max:14'
     ];

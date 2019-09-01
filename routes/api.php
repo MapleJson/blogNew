@@ -23,3 +23,4 @@ Route::get('/app-travels', "Applets\AppletsController@travels");
 Route::get('/app-loadPhoto', "Applets\AppletsController@loadPhoto");
 Route::get('/app-whisper', "Applets\AppletsController@whisper");
 Route::get('/app-about', "Applets\AppletsController@about");
+Route::get('/app-detail', "Applets\AppletsController@detail");
