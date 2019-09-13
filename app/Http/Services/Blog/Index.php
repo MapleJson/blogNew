@@ -49,6 +49,7 @@ class Index extends FrontController
     {
         $this->setPageLimit();
         Blog::$limit = $limit = $this->getPageOffset(self::limitParam());
+        Blog::$where = ['state' => Code::ENABLED_STATUS];
         $posts       = Blog::getList();
         /*
          * 分页
