@@ -52,8 +52,10 @@
                             <div class="message-content">{!! $msg->content !!}</div>
                             <p class="info info-footer">
                                 <span class="message-time">{{ $msg->created_at }}</span>
+                                @if($msg->username != $authUser)
                                 <a href="javascript:;" class="btn-reply" data-targetid="{{ $msg->id }}"
                                    data-targetname="{{ $msg->username }}">回复</a>
+                                @endif
                             </p>
                         </div>
                         @if(!empty($msg->child))
@@ -70,8 +72,10 @@
                                     </div>
                                     <p class="info">
                                         <span class="message-time">{{ $child->created_at }}</span>
+                                        @if($child->username != $authUser)
                                         <a href="javascript:;" class="btn-reply" data-targetid="{{ $child->id }}"
                                            data-targetname="{{ $child->username }}">回复</a>
+                                        @endif
                                     </p>
                                 </div>
                             @endforeach

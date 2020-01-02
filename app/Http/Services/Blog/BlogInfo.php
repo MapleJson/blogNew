@@ -52,6 +52,14 @@ class BlogInfo extends FrontController
         self::$data['message'] = $this->getBlogMessage($id);
 
         /*
+         * 登陆用户名
+         */
+        self::$data['authUser'] = '';
+        if (auth()->check()) {
+            self::$data['authUser'] = auth()->user()->username;
+        }
+
+        /*
          * 站长推荐
          */
         self::$data['propose'] = FrontCommon::recommendBlog();

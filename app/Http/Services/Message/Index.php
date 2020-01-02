@@ -29,6 +29,13 @@ class Index extends FrontController
          * 留言排序
          */
         self::$data['message'] = $this->sortMessage(Message::getList()->toArray());
+        /*
+         * 登陆用户名
+         */
+        self::$data['authUser'] = '';
+        if (auth()->check()) {
+            self::$data['authUser'] = auth()->user()->username;
+        }
 
         return $this->responseView('message.index');
     }
