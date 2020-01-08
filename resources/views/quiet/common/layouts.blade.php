@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
-    <title>
-        @yield('title', '秋枫阁')
-    </title>
+    <title>@yield('title', '秋枫阁')</title>
     <meta name="keywords" content="{{ $about->keywords or '个人博客,Maple,秋枫阁' }}"/>
     <meta name="description" content="{{ $about->description or '秋枫阁，是一个PHPer记录生活点滴，学习之路的个人网站。' }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('common/layui/css/layui.css') }}">
