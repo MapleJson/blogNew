@@ -152,7 +152,7 @@ trait RequestRule
         'targetId'   => 'required|integer|min:1',
         'targetUser' => 'required|string',
         'parentId'   => 'required|integer|min:1',
-        'articleId'  => 'nullable|integer|min:1',
+        'articleId'  => 'nullable|integer|min:0',
         'content'    => 'required|string',
         'state'      => 'required|integer|in:1,2',
     ];
