@@ -9,7 +9,7 @@
 @section('mainContent')
     <div class="item">
         <h4 class="personal">个人简介</h4>
-        <img class="portrait" style="width: 113px;" src="{{ asset('common/images/avatar.png') }}" alt="">
+        <img class="portrait" style="width: 113px;" src="{{ asset('common/images/avatar.png') }}" alt="秋枫阁-头像">
         <p class="Introduction">{!! $about->authorName !!}<br />{!! $about->mood !!}</p>
         <div style="color:white">{!! $about->content !!}</div>
         <h4 class="personal">我的技能</h4>
@@ -34,10 +34,10 @@
             <div class="layui-progress-bar layui-bg-green" lay-percent="70%"></div>
         </div>
         <h4 class="contact">与我联系</h4>
-        <img class="code" style="width: 200px;" src="{{ asset('common/images/wx.jpeg') }}" alt="">
+        <img class="code" style="width: 200px;" src="{{ asset('common/images/wx.jpeg') }}" alt="秋枫阁-微信">
         <p class="qq-number">扫码加微信<br />QQ: {{ $about->qq }}</p>
         <h4 class="contact">打赏小的</h4>
-        <img class="code" style="width: 200px;" src="{{ asset('common/images/reward.png') }}" alt="">
+        <img class="code" style="width: 200px;" src="{{ asset('common/images/reward.png') }}" alt="秋枫阁-打赏">
     </div>
 @stop
 
@@ -66,7 +66,7 @@
                     <p>邮箱：{{ $about->email }} </p>
                     <p>GITHUB：<a href="https://github.com/MapleJson" target="_blank">https://github.com/MapleJson</a></p>
                     <p>个人微信：</p>
-                    <p><img style="width: 260px;height: 260px;" src="{{ asset('common/images/wx.jpeg') }}"></p>
+                    <p><img style="width: 260px;height: 260px;" src="{{ asset('common/images/wx.jpeg') }}" alt="秋枫阁-微信"></p>
                 </div>
             </div>
             <div class="navitem" name="top2">
@@ -94,7 +94,7 @@
                     <p>备案号：鄂ICP备18019316号</p>
                     <p>程 序：PHP 自写，采用Laravel框架</p>
                     <p class="ab_t">微信扫码打赏：</p>
-                    <p><img src="{{ asset('common/images/reward.png') }}"></p>
+                    <p><img src="{{ asset('common/images/reward.png') }}" alt="秋枫阁-打赏"></p>
 
                 </div>
             </div>

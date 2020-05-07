@@ -19,6 +19,12 @@
 </head>
 
 <body>
+<h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
+<h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
+<h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
+<h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
+<h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
+<h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
 <header class="header-navigation" id="header">
     <nav>
         <div class="logo"><a href="{{ route('home') }}">{{ $about->siteName or '秋枫阁' }}</a></div>
@@ -52,7 +58,7 @@
             <div class="guanzhu">
                 <h2>关注我 么么哒</h2>
                 <ul>
-                    <img src="{{ $about->weChatQR ?: asset('common/images/wx.jpg') }}"/>
+                    <img src="{{ $about->weChatQR ?: asset('common/images/wx.jpg') }}" alt="秋枫阁-微信"/>
                 </ul>
             </div>
         </aside>

@@ -116,7 +116,7 @@
                 @foreach($featured as $feat)
                     <li>
                         <a href="{{ route("photo", $feat->travelId) }}">
-                            <img src="{{ $feat->img }}"></a>
+                            <img src="{{ $feat->img }}" alt="秋枫阁-{{ $feat->img }}"/></a>
                         </a>
                     </li>
                 @endforeach

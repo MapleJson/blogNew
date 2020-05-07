@@ -5,7 +5,7 @@
         <ul>
             @foreach($topPic as $pic)
                 <li style="width: {{ 100/count($topPic) }}%;" class="layui-anim" data-anim="layui-anim-fadein">
-                    <a href="{{ route('home') }}"><i><img src="{{ $pic->img }}"></i>
+                    <a href="{{ route('home') }}"><i><img src="{{ $pic->img }}" alt="秋枫阁-{{ $pic->title }}"></i>
                         <div class="font">
                             <h3>{{ $pic->title }}</h3>
                         </div>
@@ -39,7 +39,7 @@
                 @if(!empty($blog->img))
                     <span class="blogpic">
                     <a href="{{ route("info", $blog->id) }}">
-                        <img src="{{ $blog->img }}">
+                        <img src="{{ $blog->img }}" alt="秋枫阁-{{ $blog->title }}">
                     </a>
                 </span>
                 @endif
@@ -77,7 +77,7 @@
 
 @section('aboutUs')
     <div class="about">
-        <div class="avatar"><img src="{{ asset('common/images/avatar.png') }}" alt=""></div>
+        <div class="avatar"><img src="{{ asset('common/images/avatar.png') }}" alt="秋枫阁-头像"></div>
         <p class="abname">{{ $about->authorName }}</p>
         <p class="abposition">{{ $about->profession }}</p>
         <div class="abtext">{{ $about->mood or '一个90后草根程序猿！2015年入行。一直潜心研究web后端技术，一边工作一边积累经验，分享一些个人笔记，以及开发经验等心得。' }}</div>

@@ -12,11 +12,17 @@
     @yield('css')
 </head>
 <body>
+<h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
+<h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
+<h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
+<h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
+<h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
+<h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
 <!-- 侧边内容 -->
 <div class="sidebar-content">
     <div class="layui-card">
         <div class="layui-card-header">
-            <img src="{{ asset('common/images/avatar.png') }}" alt=""><br/>
+            <img src="{{ asset('common/images/avatar.png') }}" alt="秋枫阁-头像"><br/>
             <span>{{ $about->authorName }}</span>
         </div>
         <div class="layui-card-body">

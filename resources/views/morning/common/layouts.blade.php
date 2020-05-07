@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', '秋枫阁')</title>
+    <title>@yield('title', '秋枫阁-Maple的个人博客')</title>
     <meta name="keywords" content="{{ $about->keywords or '个人博客,Maple,秋枫阁' }}"/>
     <meta name="description" content="{{ $about->description or '秋枫阁，是一个PHPer记录生活点滴，学习之路的个人网站。' }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,12 @@
 </head>
 
 <body>
-
+<h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
+<h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
+<h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
+<h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
+<h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
+<h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
 <div class="bg">
     <header>
         @section('header')
@@ -120,7 +125,7 @@
                     <div class="aboutme">
                         <h2 class="hometitle">关于我</h2>
                         <div class="avatar">
-                            <img src="{{ asset('common/images/avatar.png') }}">
+                            <img src="{{ asset('common/images/avatar.png') }}" alt="秋枫阁-头像">
                         </div>
                         <div class="ab_con">
                             <p>网名：{{ $about->authorName }} </p>
@@ -147,7 +152,7 @@
                     <div class="weixin">
                         <h2 class="hometitle">关注我</h2>
                         <ul>
-                            <img src="{{ $about->weChatQR ?: asset('common/images/wx.jpg') }}">
+                            <img src="{{ $about->weChatQR ?: asset('common/images/wx.jpg') }}" alt="秋枫阁-微信">
                         </ul>
                     </div>
                 @show

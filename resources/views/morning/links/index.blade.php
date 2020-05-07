@@ -21,7 +21,7 @@
                 <li>
                     <a href="{{ $link->domain }}" target="_blank">
                         <i>
-                            <img src="{{ $link->logo }}">
+                            <img src="{{ $link->logo }}" alt="秋枫阁-{{ $link->logo }}">
                             <h3>{{ $link->title }}</h3>
                         </i>
                         <div class="linkInfo">
@@ -34,7 +34,7 @@
                 <li>
                     <a href="{{ $friend->domain }}" target="_blank">
                         <i>
-                            <img src="{{ $friend->logo }}">
+                            <img src="{{ $friend->logo }}" alt="秋枫阁-{{ $friend->logo }}">
                             <h3>{{ $friend->title }}</h3>
                         </i>
                         <div class="linkInfo">

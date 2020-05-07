@@ -18,7 +18,7 @@
                             <a href="{{ route("photo", $gallery->id) }}">
                                 <span class="tnum">{{ $key + 1 }}</span>
                                 <span class="tpic">
-                                    <img src="{{ $gallery->cover }}"/>
+                                    <img src="{{ $gallery->cover }}" alt="秋枫阁-{{ $gallery->title }}"/>
                                 </span>
                                 <span class="toptext">{{ $gallery->title }}</span>
                             </a>

@@ -59,7 +59,7 @@
     <div class="photo-list mt20" id="MAPLE_photo_load">
         @foreach($photos as $photo)
             <a href="{{ $photo->img }}" title="{{ $photo->summary or ''}}">
-                <img src="{{ $photo->img }}"/>
+                <img src="{{ $photo->img }}" alt="秋枫阁-{{ $photo->img }}"/>
             </a>
         @endforeach
     </div>

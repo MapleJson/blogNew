@@ -21,7 +21,7 @@
                     @if(!empty($blog->img))
                         <span class="blogpic">
                             <a href="{{ route("info", $blog->id) }}">
-                                <img src="{{ $blog->img }}">
+                                <img src="{{ $blog->img }}" alt="秋枫阁-{{ $blog->title }}">
                             </a>
                         </span>
                     @endif
@@ -67,7 +67,7 @@
                                         【转载】@endif</span>{{ $prop->title }}
                             </a>
                         </b>
-                        <p><i><img src="{{ $prop->img }}"></i><span>{{ $prop->summary }}</span></p>
+                        <p><i><img src="{{ $prop->img }}" alt="秋枫阁-{{ $prop->title }}"></i><span>{{ $prop->summary }}</span></p>
                     </li>
                 @endforeach
             </ul>

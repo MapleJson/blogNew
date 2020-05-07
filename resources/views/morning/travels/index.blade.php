@@ -20,7 +20,7 @@
             @foreach($galleries as $gallery)
                 <li>
                     <a href="{{ route("photo", $gallery->id) }}">
-                        <i><img src="{{ $gallery->cover }}"></i>
+                        <i><img src="{{ $gallery->cover }}" alt="秋枫阁-{{ $gallery->cover }}"></i>
                     </a>
                     <div class="picinfo">
                         <a href="{{ route("photo", $gallery->id) }}">
@@ -55,7 +55,7 @@
                                         【转载】@endif</span>{{ $prop->title }}
                             </a>
                         </b>
-                        <p><i><img src="{{ $prop->img }}"></i><span>{{ $prop->summary }}</span></p>
+                        <p><i><img src="{{ $prop->img }}" alt="秋枫阁-{{ $prop->title }}"></i><span>{{ $prop->summary }}</span></p>
                     </li>
                 @endforeach
             </ul>

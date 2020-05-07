@@ -33,7 +33,7 @@
                     <p>邮箱：{{ $about->email }} </p>
                     <p>GITHUB：<a href="https://github.com/MapleJson" target="_blank">https://github.com/MapleJson</a></p>
                     <p>个人微信：</p>
-                    <p><img style="width: 260px;height: 260px;" src="{{ asset('common/images/wx.jpeg') }}"></p>
+                    <p><img style="width: 260px;height: 260px;" src="{{ asset('common/images/wx.jpeg') }}" alt="秋枫阁-微信"></p>
                 </div>
             </div>
             <div class="navitem" name="top2">
@@ -61,7 +61,7 @@
                     <p>备案号：鄂ICP备18019316号</p>
                     <p>程 序：PHP 自写，采用Laravel框架</p>
                     <p class="ab_t">微信扫码打赏：</p>
-                    <p><img src="{{ asset('common/images/reward.png') }}"></p>
+                    <p><img src="{{ asset('common/images/reward.png') }}" alt="秋枫阁-打赏"></p>
 
                 </div>
             </div>
