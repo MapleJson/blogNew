@@ -4,6 +4,7 @@ namespace App\Http\Services\Home;
 
 use App\Ext\Code;
 use App\Models\Blog;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
 
 class SiteMap
@@ -28,14 +29,14 @@ class SiteMap
     protected function buildSiteMap()
     {
         $postsInfo = $this->getPostsInfo();
-        $dates     = array_values($postsInfo);
+        $dates = array_values($postsInfo);
         sort($dates);
         $lastMod = last($dates);
 
         $url = trim(url('/'), '/') . '/';
 
-        $xml   = [];
-        $xml[] = '<?xml version="1.0" encoding="UTF-8"?' . '>';
+        $xml = [];
+        $xml[] = '<?xml version="1.0" encoding="UTF-8" ?>';
         $xml[] = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
         $xml[] = '  <url>';
         $xml[] = "    <loc>$url</loc>";
@@ -44,11 +45,27 @@ class SiteMap
         $xml[] = '    <priority>0.8</priority>';
         $xml[] = '  </url>';
 
+        $routeNames = ['rss', 'siteMap', 'travels', 'blog', 'whisper', 'about', 'hutui', 'links'];
+        foreach ($routeNames as $name) {
+            $xml[] = '  <url>';
+            $xml[] = '    <loc>' . route($name) . '</loc>';
+            $xml[] = "    <lastmod>$lastMod</lastmod>";
+            $xml[] = '  </url>';
+        }
+
+        $tagsInfo = $this->getTagsInfo();
+        foreach ($tagsInfo as $id => $lastMod) {
+            $xml[] = '  <url>';
+            $xml[] = '    <loc>' . route('tags', $id) . '</loc>';
+            $xml[] = "    <lastmod>$lastMod</lastmod>";
+            $xml[] = '  </url>';
+        }
+
         foreach ($postsInfo as $id => $lastMod) {
             $xml[] = '  <url>';
-            $xml[] = "    <loc>" . route("info", $id) . "</loc>";
+            $xml[] = '    <loc>' . route('info', $id) . '</loc>';
             $xml[] = "    <lastmod>$lastMod</lastmod>";
-            $xml[] = "  </url>";
+            $xml[] = '  </url>';
         }
 
         $xml[] = '</urlset>';
@@ -63,6 +80,16 @@ class SiteMap
     {
         Blog::_destroy();
         Blog::$where = ['state' => Code::ENABLED_STATUS,];
-        return Blog::getList()->pluck("created_at", "id")->toArray();
+        return Blog::getList()->pluck('created_at', 'id')->toArray();
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function getTagsInfo()
+    {
+        Tag::_destroy();
+        Tag::$where = ['state' => Code::ENABLED_STATUS,];
+        return Tag::getList()->pluck('created_at', 'id')->toArray();
     }
 }
