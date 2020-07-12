@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-点滴
-@stop
+@section('title')点滴@stop
 
 @section('css')
     <link href="{{ asset('showTime/css/share.css') }}" rel="stylesheet">

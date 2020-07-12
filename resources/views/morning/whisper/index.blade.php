@@ -1,8 +1,6 @@
 @extends('morning/common/layouts')
 
-@section('title')
-    秋枫阁-耳语
-@stop
+@section('title')耳语@stop
 
 @section('breadSpan')
     执子之手，相濡以沫，耳鬓厮磨，白首不离，我心驰神往。

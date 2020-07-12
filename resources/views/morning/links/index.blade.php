@@ -1,8 +1,6 @@
 @extends('morning/common/layouts')
 
-@section('title')
-    秋枫阁-友情链接
-@stop
+@section('title')友情链接@stop
 
 @section('breadSpan')
     故人入我梦，明我长相忆。

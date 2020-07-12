@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-耳语
-@stop
+@section('title')耳语@stop
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('showTime/css/time.css') }}">

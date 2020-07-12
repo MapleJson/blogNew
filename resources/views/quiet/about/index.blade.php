@@ -1,8 +1,6 @@
 @extends('quiet/common/layouts')
 
-@section('title')
-    秋枫阁-关于我
-@stop
+@section('title')关于我@stop
 
 @section('mainClass')about @stop
 

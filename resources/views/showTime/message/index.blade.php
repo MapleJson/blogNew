@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-留言
-@stop
+@section('title')留言@stop
 
 @section('css')
     <style>

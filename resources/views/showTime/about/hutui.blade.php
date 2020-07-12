@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-中国博客联盟
-@stop
+@section('title')中国博客联盟@stop
 
 @section('css')
     <style>

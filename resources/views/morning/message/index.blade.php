@@ -1,8 +1,6 @@
 @extends('morning/common/layouts')
 
-@section('title')
-    秋枫阁-留言
-@stop
+@section('title')留言@stop
 
 @section('breadSpan')
     花开不并百花丛，独立疏篱趣未穷。宁可枝头抱香死，何曾吹落北风中。

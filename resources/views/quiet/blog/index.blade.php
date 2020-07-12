@@ -1,8 +1,6 @@
 @extends('quiet/common/layouts')
 
-@section('title')
-    秋枫阁-个人博客
-@stop
+@section('title')个人博客@stop
 
 @section('mainRight')
     @if(!empty($tags) && $tags != '[]')

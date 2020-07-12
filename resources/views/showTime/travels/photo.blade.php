@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-相册
-@stop
+@section('title')相册@stop
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('common/css/share.min.css') }}">

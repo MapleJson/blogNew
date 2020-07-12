@@ -1,8 +1,6 @@
 @extends('morning/common/layouts')
 
-@section('title')
-    秋枫阁-个人博客
-@stop
+@section('title')个人博客@stop
 
 @section('breadSpan')
     自小刺头深草里，而今渐觉出蓬蒿。时人不识凌云木，直待凌云始道高。

@@ -1,8 +1,6 @@
 @extends('morning/common/layouts')
 
-@section('title')
-    秋枫阁-点滴
-@stop
+@section('title')点滴@stop
 
 @section('breadSpan')
     雨打梨花深闭门，忘了青春，误了青春。赏心乐事共谁论？花下销魂，月下销魂。

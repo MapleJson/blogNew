@@ -1,8 +1,6 @@
 @extends('quiet/common/layouts')
 
-@section('title')
-    秋枫阁-耳语
-@stop
+@section('title')耳语@stop
 
 @section('mainClass')mood @stop
 

@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-个人博客
-@stop
+@section('title')个人博客@stop
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('showTime/css/index.css') }}">

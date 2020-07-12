@@ -1,8 +1,6 @@
 @extends('showTime/common/layouts')
 
-@section('title')
-    秋枫阁-友情链接
-@stop
+@section('title')友情链接@stop
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ asset('showTime/css/index.css') }}">

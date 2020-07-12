@@ -1,8 +1,6 @@
 @extends('quiet/common/layouts')
 
-@section('title')
-    秋枫阁-{{ $info->title }}
-@stop
+@section('title'){{ $info->title }}@stop
 
 @section('mainClass')mood message  mood-details article1 @stop
 
