@@ -61,8 +61,8 @@ CREATE TABLE `admin_menu` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `admin_menu` VALUES (1, 0, 1, 'admin.index', '主页', 'layui-icon-home', '/admin/index.html', NULL, '2018-12-15 19:34:25');
-INSERT INTO `admin_menu` VALUES (2, 0, 13, '', '管理员', 'layui-icon-group', NULL, NULL, '2018-12-15 21:16:46');
-INSERT INTO `admin_menu` VALUES (3, 2, 14, 'admin.administrators', '管理员管理', 'layui-icon-user', '/admin/administrators.html', NULL, '2018-12-15 21:38:18');
+INSERT INTO `admin_menu` VALUES (2, 0, 14, '', '管理员', 'layui-icon-group', NULL, NULL, '2018-12-15 21:16:46');
+INSERT INTO `admin_menu` VALUES (3, 2, 16, 'admin.administrators', '管理员管理', 'layui-icon-user', '/admin/administrators.html', NULL, '2018-12-15 21:38:18');
 INSERT INTO `admin_menu` VALUES (4, 2, 17, 'admin.menus', '菜单管理', 'layui-icon-more-vertical', '/admin/menus.html', NULL, '2018-12-15 21:38:24');
 INSERT INTO `admin_menu` VALUES (5, 2, 18, 'admin.logs', '日志管理', 'layui-icon-console', '/admin/logs.html', NULL, '2018-12-15 21:39:25');
 INSERT INTO `admin_menu` VALUES (6, 0, 3, 'admin.posts', '文章管理', 'layui-icon-read', '/admin/posts.html', '2018-06-20 01:02:50', '2018-12-15 21:42:12');
@@ -74,6 +74,7 @@ INSERT INTO `admin_menu` VALUES (11, 0, 8, 'admin.message', '留言管理', 'lay
 INSERT INTO `admin_menu` VALUES (12, 0, 6, 'admin.travels', '相册管理', 'layui-icon-picture-fine', '/admin/travels.html', '2018-06-21 16:01:21', '2018-12-15 21:40:29');
 INSERT INTO `admin_menu` VALUES (13, 0, 10, 'admin.frontUsers', '用户管理', 'layui-icon-user', '/admin/frontUsers.html', '2018-06-27 01:02:15', '2018-12-15 21:41:47');
 INSERT INTO `admin_menu` VALUES (14, 0, 7, 'admin.whispers', '心情管理', 'layui-icon-face-smile-b', '/admin/whispers.html', '2018-06-29 02:16:56', '2018-12-15 21:41:01');
+INSERT INTO `admin_menu` VALUES (15, 0, 13, 'admin.template', '模板管理', 'layui-icon-template', '/admin/template.html', '2018-06-29 02:16:56', '2018-12-15 21:41:01');
 COMMIT;
 
 -- ----------------------------
@@ -594,5 +595,14 @@ CREATE TABLE `templates` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of templates
+-- ----------------------------
+BEGIN;
+INSERT INTO `templates` VALUES (1, 'showTime', 1, '2018-06-26 15:24:01', '2018-06-26 15:24:01');
+INSERT INTO `templates` VALUES (2, 'morning', 1, '2018-06-26 15:24:21', '2018-06-26 15:24:21');
+INSERT INTO `templates` VALUES (3, 'quiet', 1, '2018-06-27 23:17:14', '2018-06-27 23:17:14');
+COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

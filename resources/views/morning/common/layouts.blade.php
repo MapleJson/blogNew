@@ -21,12 +21,6 @@
 </head>
 
 <body>
-<h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
-<h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
-<h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
-<h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
-<h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
-<h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
 <div class="bg">
     <header>
         @section('header')
@@ -162,6 +156,12 @@
 
     <div class="blank"></div>
     <footer>
+        <h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
+        <h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
+        <h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
+        <h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
+        <h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
+        <h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
         @section('footer')
             <p class="contact">
                 <a href="https://github.com/MapleJson" target="_blank"><i class="fa fa-github"></i></a>
@@ -173,7 +173,7 @@
             </p>
             <p class="copyright">支持登录方式：QQ、GitHub、微博</p>
             <p class="copyright">Copyright © 2018 by {{ $about->siteName or '秋枫阁' }},<a
-                        href="http://www.miitbeian.gov.cn/" target="_blank">鄂ICP备18019316号</a> All Rights Reserved</p>
+                        href="http://www.beian.gov.cn/" target="_blank">鄂ICP备18019316号</a> All Rights Reserved</p>
         @show
     </footer>
 </div>

@@ -19,12 +19,6 @@
 </head>
 
 <body>
-<h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
-<h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
-<h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
-<h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
-<h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
-<h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
 <header class="header-navigation" id="header">
     <nav>
         <div class="logo"><a href="{{ route('home') }}">{{ $about->siteName or '秋枫阁' }}</a></div>
@@ -51,6 +45,12 @@
 </header>
 
 <article>
+    <h1 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h1>
+    <h2 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h2>
+    <h3 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h3>
+    <h4 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h4>
+    <h5 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h5>
+    <h6 hidden>{{ $about->keywords or '个人博客,Maple,秋枫阁' }}</h6>
     @yield('article')
     @section('aside')
         <aside class="r_box">
