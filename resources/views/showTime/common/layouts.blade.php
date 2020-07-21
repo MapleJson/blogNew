@@ -192,6 +192,18 @@
         }, 100)
     }();
 </script>
+{{--百度统计--}}
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?e04928889e427efe69c239a34503a5e5";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+{{--百度统计end--}}
+
 <!--[if lt IE 9]>
 <script src="{{ asset('common/js/modernizr.js') }}"></script>
 <![endif]-->

@@ -199,7 +199,17 @@
         });
     });
 </script>
-
+{{--百度统计--}}
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?838735ade404fc02736d14957f43958a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+{{--百度统计end--}}
 @yield('script')
 
 </body>
