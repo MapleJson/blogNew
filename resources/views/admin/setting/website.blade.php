@@ -33,6 +33,12 @@
                             </div>
                         </div>
                         <div class="layui-form-item">
+                            <label class="layui-form-label">生日</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="birthday" value="{{ $set->birthday }}" id="birth" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
                             <label class="layui-form-label">职业</label>
                             <div class="layui-input-block">
                                 <input type="text" name="profession" value="{{ $set->profession }}" class="layui-input">
@@ -156,13 +162,21 @@
 @section('script')
     <script src="{{ asset('admin/modules/wangEditor.min.js') }}"></script>
     <script>
-        layui.use(['index', 'form', 'upload', 'wang'], function () {
+        layui.use(['index', 'form', 'upload', 'wang', 'laydate'], function () {
             var $ = layui.$,
                 layer = layui.layer,
                 form = layui.form,
                 admin = layui.admin,
                 wang = layui.wang,
                 upload = layui.upload;
+                laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#birth' //指定元素
+                , type: 'datetime'
+                , format: 'yyyy-MM-dd HH:mm:ss'
+            });
 
             // wangEditor富文本编辑器
             var contentEditor = wang('aboutMeContent', 'content');

@@ -52,6 +52,13 @@
                 </li>
             </ul>
             <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+                @if($born)
+                <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                    <a href="javascript:;">
+                        神童降世：<i class="layui-icon">{{ $born }}</i>
+                    </a>
+                </li>
+                @endif
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                     <a href="javascript:;">
                         当前时间：<i id="show" class="layui-icon"></i>

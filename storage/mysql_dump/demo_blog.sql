@@ -9,6 +9,7 @@ CREATE TABLE `about` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `siteName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '站点名称',
   `authorName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '作者名称',
+  `birthday` datetime COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '生日',
   `profession` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '职业',
   `keywords` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '关键字',
   `description` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '站点说明',

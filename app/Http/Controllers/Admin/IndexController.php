@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Common\AdminController;
+use App\Ext\Code;
+use App\Models\About;
 use App\Models\Administrator;
 use App\Models\AdminMenu;
 
@@ -10,6 +12,7 @@ use App\Models\AdminMenu;
  * 首页
  *
  * Class IndexController
+ *
  * @package App\Http\Controllers\Admin
  */
 class IndexController extends AdminController
@@ -29,7 +32,7 @@ class IndexController extends AdminController
         $menus = [];
 
         AdminMenu::$orderBy = ['order', 'ASC'];
-        $adminMenus         = AdminMenu::getList()->toArray();
+        $adminMenus = AdminMenu::getList()->toArray();
         foreach ($adminMenus as $adminMenu) {
             if (!$adminMenu['parent_id']) {
                 $adminMenu['url'] = $this->getMenuUrl($adminMenu);
@@ -42,11 +45,21 @@ class IndexController extends AdminController
                 $menus[$adminMenu['parent_id']]['child'][] = $adminMenu;
             }
         }
-        return $this->responseView('layout', compact('menus'));
+
+        $born = null;
+        if (About::getOne(Code::ONE)->birthday) {
+            $birthday = date_create(About::getOne(Code::ONE)->birthday);
+            $now = date_create(date('Y-m-d H:i:s'));
+            $interval = date_diff($birthday, $now);
+            $born = $interval->format(('%r%y年%r%m月%r%d天%r%h时%r%i分'));
+        }
+
+        return $this->responseView('layout', compact('menus', 'born'));
     }
 
     /**
      * 获取菜单链接
+     *
      * @param $menu
      * @return mixed
      */
@@ -83,7 +96,7 @@ class IndexController extends AdminController
     /**
      * 更新个人资料
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function updateAdminUser(int $id)
@@ -110,14 +123,14 @@ class IndexController extends AdminController
     /**
      * 修改密码
      *
-     * @param  int $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function updatePwd($id)
     {
         $put = self::getValidateParam(__FUNCTION__);
 
-        Administrator::$where['id']      = (int)$id;
+        Administrator::$where['id'] = (int)$id;
         Administrator::$data['password'] = bcrypt($put['password']);
         if (Administrator::editToData()) {
             return redirect(route('admin.changePwd'))->with(['status' => '修改密码成功']);

@@ -65,6 +65,7 @@ trait RequestRule
         'keywords'      => 'required|string',
         'description'   => 'required|string',
         'authorName'    => 'required|string',
+        'birthday'       => 'date_format:Y-m-d H:i:s',
         'profession'    => 'required|string',
         'mood'          => 'required|string',
         'content'       => 'required|string',
