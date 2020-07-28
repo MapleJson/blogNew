@@ -65,7 +65,7 @@ trait RequestRule
         'keywords'      => 'required|string',
         'description'   => 'required|string',
         'authorName'    => 'required|string',
-        'birthday'       => 'date_format:Y-m-d H:i:s',
+        'birthday'      => 'date_format:Y-m-d H:i:s',
         'profession'    => 'required|string',
         'mood'          => 'required|string',
         'content'       => 'required|string',
@@ -215,5 +215,17 @@ trait RequestRule
     public $templateStoreUpdateRule = [
         'name'  => 'required|string',
         'state' => 'required|integer|in:1,2',
+    ];
+
+    public $babySearchRule = [
+        'day' => 'nullable|date',
+    ];
+
+    public $babyStoreUpdateRule = [
+        'action' => 'nullable|integer|in:1,2,3,4',
+        'status' => 'nullable|integer|in:1,2',
+        'breast' => 'nullable|integer',
+        'dried'  => 'nullable|integer',
+        'remark' => 'nullable|string',
     ];
 }

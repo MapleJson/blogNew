@@ -606,4 +606,21 @@ INSERT INTO `templates` VALUES (2, 'morning', 1, '2018-06-26 15:24:21', '2018-06
 INSERT INTO `templates` VALUES (3, 'quiet', 1, '2018-06-27 23:17:14', '2018-06-27 23:17:14');
 COMMIT;
 
+-- ----------------------------
+-- Table structure for baby_log
+-- ----------------------------
+DROP TABLE IF EXISTS `baby_log`;
+CREATE TABLE `baby_log` (
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+	`action` INT(10) UNSIGNED NOT NULL DEFAULT '1' COMMENT '行为 1亲喂 2瓶喂 3小便 4大便',
+	`breast` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '母乳量 ml',
+	`dried` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '奶粉量 ml',
+	`remark` VARCHAR(255) NULL DEFAULT NULL COMMENT '备注' COLLATE 'utf8mb4_unicode_ci',
+	`day` DATE NULL DEFAULT NULL COMMENT '日期',
+	`status` TINYINT(1) UNSIGNED NULL DEFAULT '1' COMMENT '行为是否完成，1是 2否',
+	`created_at` TIMESTAMP NULL DEFAULT NULL,
+	`updated_at` TIMESTAMP NULL DEFAULT NULL,
+	PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='宝宝起居记录';
+
 SET FOREIGN_KEY_CHECKS = 1;

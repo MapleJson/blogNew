@@ -18,6 +18,7 @@ class Code
     const FAIL_TO_ADD = 1003;
     const FAIL_TO_EDIT = 1004;
     const FAIL_TO_DELETE = 1005;
+    const HAS_UNDONE = 1006;
     /*
      * 前台
      */

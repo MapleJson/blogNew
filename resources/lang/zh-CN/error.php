@@ -9,4 +9,6 @@ return [
     Code::FAIL_TO_ADD => '添加失败，请重试',
     Code::FAIL_TO_EDIT => '修改失败，请重试',
     Code::FAIL_TO_DELETE => '删除失败，请重试',
+
+    Code::HAS_UNDONE => '还有未完成的行为，请先结束上一个行为',
 ];

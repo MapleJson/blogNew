@@ -76,7 +76,7 @@ class AdminController extends PublicController
         if ($model::addToData()) {
             return $this->responseJson();
         }
-        return $this->responseJson(self::translateInfo(Code::FAIL_TO_ADD));
+        return $this->responseJson(Code::FAIL_TO_ADD);
     }
 
     /**
@@ -94,7 +94,7 @@ class AdminController extends PublicController
         if ($model::editToData()) {
             return $this->responseJson();
         }
-        return $this->responseJson(self::translateInfo(Code::FAIL_TO_EDIT));
+        return $this->responseJson(Code::FAIL_TO_EDIT);
     }
 
     /**
@@ -110,6 +110,6 @@ class AdminController extends PublicController
         if ($model::delToData($del['id'])) {
             return $this->responseJson();
         }
-        return $this->responseJson(self::translateInfo(Code::FAIL_TO_DELETE));
+        return $this->responseJson(Code::FAIL_TO_DELETE);
     }
 }

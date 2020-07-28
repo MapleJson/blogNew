@@ -48,6 +48,7 @@ Route::group([
     $router->get('whispers.html', 'WhisperController@index')->name('admin.whispers');
     $router->get('icons.html', 'MenuController@icons')->name('admin.icons');
     $router->get('template.html', 'TemplateController@index')->name('admin.template');
+    $router->get('baby.html', 'BabyController@index')->name('admin.baby');
     /*
      * 内页页面路由
      */
@@ -116,6 +117,11 @@ Route::group([
     $router->post('template/create', 'TemplateController@store')->name('admin.addTemplate');
     $router->put('template/edit/{id}', 'TemplateController@update')->name('admin.editTemplate');
     $router->delete('template/delete', 'TemplateController@destroy')->name('admin.delTemplate');
+    // 宝宝操作
+    $router->get('baby/list', 'BabyController@data')->name('admin.getBabyLogs');
+    $router->post('baby/create', 'BabyController@store')->name('admin.addBabyLog');
+    $router->put('baby/edit/{id}', 'BabyController@update')->name('admin.editBabyLog');
+    $router->delete('baby/delete', 'BabyController@destroy')->name('admin.delBabyLog');
     // 用户操作
     $router->get('front/list', 'FrontUserController@data')->name('admin.getFrontUsers');
     $router->put('front/edit/{id}', 'FrontUserController@update')->name('admin.editFrontUser');
