@@ -13,7 +13,7 @@ class Baby extends PublicModel
 
     protected $guarded = ['id'];
 
-    public static $orderBy = '`id` desc';
+    public static $orderBy = '`created_at` desc';
 
     /**
      * 判断是否还有未完成的母乳行为
