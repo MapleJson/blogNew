@@ -170,13 +170,21 @@
                     $("#lay-admin-data-form input[name=breast]").val(0);
                     $("#lay-admin-data-form input[name=dried]").val(0);
                     $("#lay-admin-data-form input[name=remark]").val('');
+                    $("#lay-admin-data-form input[name=created_at]").val("{{ date('Y-m-d H:i:s') }}");
                     form.render();
                     layer.open({
                         type: 1
                         , title: '瓶喂参数'
                         , content: $('#lay-admin-data-form')
                         , maxmin: true
-                        , area: ['400px', '300px']
+                        , area: ['400px', '500px']
+                        , success: function (layero, index) {
+                            laydate.render({
+                                elem: '#created_at ' //指定元素
+                                , type: 'datetime'
+                                , format: 'yyyy-MM-dd HH:mm:ss'
+                            });
+                        }
                     });
                     updateData('POST', "{{ route('admin.addBabyLog') }}");
                 }
@@ -255,13 +263,21 @@
                     $("#lay-admin-data-form input[name=breast]").val(obj.data.breast);
                     $("#lay-admin-data-form input[name=dried]").val(obj.data.dried);
                     $("#lay-admin-data-form input[name=remark]").val(obj.data.remark);
+                    $("#lay-admin-data-form input[name=created_at]").val(obj.data.created_at);
                     form.render();
                     layer.open({
                         type: 1
                         , title: '编辑瓶喂'
                         , content: $('#lay-admin-data-form')
                         , maxmin: true
-                        , area: ['400px', '300px']
+                        , area: ['400px', '500px']
+                        , success: function (layero, index) {
+                            laydate.render({
+                                elem: '#created_at ' //指定元素
+                                , type: 'datetime'
+                                , format: 'yyyy-MM-dd HH:mm:ss'
+                            });
+                        }
                     });
                     updateData('PUT', 'baby/edit/' + id);
                 } else if (obj.event === 'done') {

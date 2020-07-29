@@ -227,5 +227,6 @@ trait RequestRule
         'breast' => 'nullable|integer',
         'dried'  => 'nullable|integer',
         'remark' => 'nullable|string',
+        'created_at' => 'nullable|date',
     ];
 }
