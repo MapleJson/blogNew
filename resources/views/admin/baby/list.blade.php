@@ -87,8 +87,8 @@
                 }
                 , cols: [[
                     {field: 'action', title: '行为', align: 'center', minWidth: 50, toolbar: '#actionTpl'}
-                    , {field: 'breast', title: '母乳(ml)', align: 'center', minWidth: 100}
-                    , {field: 'dried', title: '奶粉(ml)', align: 'center', minWidth: 100}
+                    , {field: 'breast', title: '瓶喂母乳(ml)', align: 'center', minWidth: 100}
+                    , {field: 'dried', title: '瓶喂奶粉(ml)', align: 'center', minWidth: 100}
                     , {field: 'day', title: '日期', align: 'center', minWidth: 100}
                     , {field: 'created_at', title: '开始时间', align: 'center', minWidth: 80}
                     , {field: 'updated_at', title: '结束时间', align: 'center', minWidth: 80}
