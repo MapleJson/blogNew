@@ -86,10 +86,10 @@
                     , dataName: 'data' //数据列表的字段名称，默认：data
                 }
                 , cols: [[
-                    {field: 'action', title: '行为', align: 'center', minWidth: 50, toolbar: '#actionTpl'}
-                    , {field: 'breast', title: '瓶喂母乳(ml)', align: 'center', minWidth: 100}
-                    , {field: 'dried', title: '瓶喂奶粉(ml)', align: 'center', minWidth: 100}
-                    , {field: 'day', title: '日期', align: 'center', minWidth: 100}
+                    {field: 'action', title: '行为', align: 'center', width: 120, toolbar: '#actionTpl'}
+                    , {field: 'breast', title: '瓶喂母乳(ml)', align: 'center', width: 140}
+                    , {field: 'dried', title: '瓶喂奶粉(ml)', align: 'center', width: 140}
+                    , {field: 'day', title: '日期', align: 'center', width: 140}
                     , {field: 'created_at', title: '开始时间', align: 'center', minWidth: 80}
                     , {field: 'updated_at', title: '结束时间', align: 'center', minWidth: 80}
                     , {field: 'remark', title: '备注', align: 'center', minWidth: 100}
