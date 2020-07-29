@@ -265,18 +265,28 @@
                     });
                     updateData('PUT', 'baby/edit/' + id);
                 } else if (obj.event === 'done') {
-                    admin.req({
-                        url: 'baby/edit/' + id
-                        , type: 'POST'
-                        , data: {
-                            status: 1
-                            , _method: 'PUT'
-                        }
-                        , done: function (res) {
-                            layer.msg(res.msg);
-                            table.reload('LAY-admin-data-list'); //数据刷新
-                            layer.closeAll(); //关闭弹层
-                        }
+                    layer.open({
+                        type: 1
+                        , title: '备注'
+                        , content: $('#lay-admin-defecate-form')
+                        , maxmin: true
+                        , area: ['400px', '300px']
+                    });
+                    //提交 Ajax 成功后，静态更新表格中的数据
+                    form.on('submit(LAY-admin-defecate-submit)', function (data) {
+                        data.field._method = 'PUT';
+                        data.field.status = 1;
+                        admin.req({
+                            url: 'baby/edit/' + id
+                            , type: 'POST'
+                            , data: data.field
+                            , done: function (res) {
+                                layer.msg(res.msg);
+                                $("#lay-admin-defecate-form input[name=remark]").val('');
+                                table.reload('LAY-admin-data-list'); //数据刷新
+                                layer.closeAll(); //关闭弹层
+                            }
+                        });
                     });
                 }
             });
