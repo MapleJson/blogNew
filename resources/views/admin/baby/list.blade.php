@@ -25,6 +25,7 @@
                 <button class="layui-btn layuiadmin-btn-forum-list" data-type="dried">瓶喂</button>
                 <button class="layui-btn layuiadmin-btn-forum-list" data-type="urinate">小便</button>
                 <button class="layui-btn layuiadmin-btn-forum-list" data-type="defecate">大便</button>
+                <button class="layui-btn layuiadmin-btn-forum-list" data-type="remark">备注</button>
             </div>
 
             <table id="LAY-admin-data-list" lay-filter="LAY-admin-data-list"></table>
@@ -37,13 +38,15 @@
                 <button class="layui-btn layui-btn-primary layui-btn-xs">小便</button>
                 @{{#  } else if(d.action == 4) { }}
                 <button class="layui-btn layui-btn-primary layui-btn-xs">大便</button>
+                @{{#  } else if(d.action == 5) { }}
+                <button class="layui-btn layui-btn-radius layui-btn-xs">其他情况</button>
                 @{{#  } }}
             </script>
             <script type="text/html" id="table-admin-data-do">
                 @{{#  if(d.action == 1) { }}
-                    @{{# if( d.status != 1) { }}
-                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="done">亲喂结束</a>
-                    @{{#  } }}
+                @{{# if( d.status != 1) { }}
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="done">亲喂结束</a>
+                @{{#  } }}
                 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i
                         class="layui-icon layui-icon-delete"></i></a>
                 @{{#  } else if(d.action == 2){ }}
@@ -61,7 +64,7 @@
                 , table = layui.table
                 , admin = layui.admin
                 , form = layui.form
-                ,laydate = layui.laydate;
+                , laydate = layui.laydate;
 
             //执行一个laydate实例
             laydate.render({
@@ -215,6 +218,30 @@
                         });
                     });
                 }
+                , remark: function () {
+                    layer.open({
+                        type: 1
+                        , title: '备注'
+                        , content: $('#lay-admin-defecate-form')
+                        , maxmin: true
+                        , area: ['400px', '300px']
+                    });
+                    //提交 Ajax 成功后，静态更新表格中的数据
+                    form.on('submit(LAY-admin-defecate-submit)', function (data) {
+                        data.field.action = 5;
+                        admin.req({
+                            url: "{{ route('admin.addBabyLog') }}"
+                            , type: 'POST'
+                            , data: data.field
+                            , done: function (res) {
+                                layer.msg(res.msg);
+                                $("#lay-admin-defecate-form input[name=remark]").val('');
+                                table.reload('LAY-admin-data-list'); //数据刷新
+                                layer.closeAll(); //关闭弹层
+                            }
+                        });
+                    });
+                }
             };
 
             //监听工具条
@@ -264,46 +291,5 @@
 @stop
 
 @section('pop')
-{{--  瓶喂参数  --}}
-    <div class="layui-form" id="lay-admin-data-form" style="padding: 20px 0 0 0; display: none">
-        <div class="layui-form-item">
-            <label class="layui-form-label">母乳</label>
-            <div class="layui-input-inline">
-                <input type="number" name="breast" lay-verify="required" value="0" placeholder="请输入母乳量" autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">奶粉</label>
-            <div class="layui-input-inline">
-                <input type="number" name="dried" lay-verify="required" value="0" placeholder="请输入奶粉量" autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">备注</label>
-            <div class="layui-input-inline">
-                <input type="text" name="remark" value="" placeholder="请输入备注" autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item" style="text-align: center">
-            <input type="button" class="layui-btn" lay-submit lay-filter="LAY-admin-data-submit" id="LAY-admin-data-submit"
-                   value="确认">
-        </div>
-    </div>
-{{--  大便备注  --}}
-    <div class="layui-form" id="lay-admin-defecate-form" style="padding: 20px 0 0 0; display: none">
-        <div class="layui-form-item">
-            <label class="layui-form-label">备注</label>
-            <div class="layui-input-inline">
-                <input type="text" name="remark" lay-verify="required" value="" placeholder="请输入备注" autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
-        <div class="layui-form-item" style="text-align: center">
-            <input type="button" class="layui-btn" lay-submit lay-filter="LAY-admin-defecate-submit" id="LAY-admin-defecate-submit"
-                   value="确认">
-        </div>
-    </div>
+    @include('admin.baby._form')
 @stop

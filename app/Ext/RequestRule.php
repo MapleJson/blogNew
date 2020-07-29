@@ -222,7 +222,7 @@ trait RequestRule
     ];
 
     public $babyStoreUpdateRule = [
-        'action' => 'nullable|integer|in:1,2,3,4',
+        'action' => 'nullable|integer|in:1,2,3,4,5',
         'status' => 'nullable|integer|in:1,2',
         'breast' => 'nullable|integer',
         'dried'  => 'nullable|integer',
