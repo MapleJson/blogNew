@@ -35,9 +35,9 @@
                 @{{#  } else if(d.action == 2) { }}
                 <button class="layui-btn layui-btn-danger layui-btn-xs">瓶喂</button>
                 @{{#  } else if(d.action == 3) { }}
-                <button class="layui-btn layui-btn-primary layui-btn-xs">小便</button>
+                <button class="layui-btn layui-btn-normal layui-btn-xs">小便</button>
                 @{{#  } else if(d.action == 4) { }}
-                <button class="layui-btn layui-btn-primary layui-btn-xs">大便</button>
+                <button class="layui-btn layui-btn-warm layui-btn-xs">大便</button>
                 @{{#  } else if(d.action == 5) { }}
                 <button class="layui-btn layui-btn-radius layui-btn-xs">其他情况</button>
                 @{{#  } }}
