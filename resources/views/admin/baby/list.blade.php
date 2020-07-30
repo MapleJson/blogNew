@@ -96,8 +96,8 @@
                     , {title: '操作', align: 'center', fixed: 'right', width: 150, toolbar: '#table-admin-data-do'}
                 ]]
                 , page: true
-                , limit: 20
-                , limits: [20, 30, 50]
+                , limit: 15
+                , limits: [15, 30, 50]
                 , height: 'full-180'
                 , text: {none: '暂无数据！'}
             });
