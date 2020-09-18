@@ -1,6 +1,7 @@
 .qrTips {
     position: sticky;
     z-index: 1;
+    margin-top: 45px;
 }
 
 #DonateText {
