@@ -1,0 +1,14 @@
+<svg width="512" height="145" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text stroke="null" transform="rotate(-27 70.2517242431641,70.57128143310548) matrix(1.0372896849927997,0,0,1.0260192731726645,-0.3082826777735477,-3.5345647837560037) " font-style="italic" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="105" id="svg_7" y="108.763956" x="1.779995" stroke-opacity="null" stroke-width="0" fill="#ff7f00">打</text>
+  <text stroke="null" transform="rotate(3 198.5959320068364,73.01634979248037) matrix(1.2299344005706416,0,0,1.3547338276335097,-28.07713863923361,-47.75605583957265) " font-style="italic" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="105" id="svg_8" y="125.294704" x="120.27389" stroke-opacity="null" stroke-width="0" fill="#ff7f00">赏</text>
+  <text stroke="null" transform="rotate(-92 322.62200927734375,81.26003265380857) matrix(1.1599240303039553,0,0,1.2793034315109253,-35.415574277739154,-30.699000200571394) " font-style="italic" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="105" id="svg_9" y="123.897857" x="249.568119" stroke-opacity="null" stroke-width="0" fill="#ff7f00">一</text>
+  <text stroke="null" transform="rotate(10 424.5885314941408,78.67602539062497) matrix(1.2642068862915041,0,0,1.286712408065796,-127.7410641507641,-43.90191303067287) " font-style="italic" font-weight="bold" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="105" id="svg_10" y="131.712643" x="371.828078" stroke-opacity="null" stroke-width="0" fill="#ff7f00">下</text>
+ </g>
+</svg>
