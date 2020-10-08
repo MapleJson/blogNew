@@ -65,7 +65,12 @@
                                         【转载】@endif</span>{{ $prop->title }}
                             </a>
                         </b>
-                        <p><i><img src="{{ $prop->img }}" alt="秋枫阁-{{ $prop->title }}"></i><span>{{ $prop->summary }}</span></p>
+                        <p>
+                            @if(!empty($prop->img))
+                            <i><img src="{{ $prop->img }}" alt="秋枫阁-{{ $prop->title }}"></i>
+                            @endif
+                            <span>{{ $prop->summary }}</span>
+                        </p>
                     </li>
                 @endforeach
             </ul>
