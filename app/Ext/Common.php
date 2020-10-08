@@ -58,6 +58,9 @@ trait Common
      */
     public static function uploadImageUrl($src)
     {
+        if (empty($src)) {
+            return '';
+        }
         if (self::isUrl($src)) {
             return $src;
         }
