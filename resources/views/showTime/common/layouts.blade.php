@@ -79,7 +79,7 @@
         <a href="{{ route('hutui') }}">中国博客联盟</a>
     </p>
     <p>
-        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="/">鄂ICP备18019316号</a>
+        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备18019316号</a>
     </p>
 </footer>
 <a href="#" class="cd-top">Top</a>

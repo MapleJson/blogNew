@@ -173,7 +173,7 @@
             </p>
             <p class="copyright">支持登录方式：QQ、GitHub、微博</p>
             <p class="copyright">Copyright © 2018 by {{ $about->siteName or '秋枫阁' }},<a
-                        href="http://www.beian.gov.cn/" target="_blank">鄂ICP备18019316号</a> All Rights Reserved</p>
+                        href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备18019316号</a> All Rights Reserved</p>
         @show
     </footer>
 </div>
