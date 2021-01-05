@@ -77,7 +77,7 @@
     <p>
         <a href="https://wpa.qq.com/msgrd?v=3&amp;uin={{ $about->qq }}&amp;site=qq&amp;menu=yes" target="_blank"
            title="928046320"><i class="layui-icon layui-icon-login-qq"></i></a>&nbsp;
-        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备18019316号</a>
+        Copyright © 2018 by {{ $about->siteName or '秋枫阁' }} <a href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备18019316号-1</a>
     </p>
 </footer>
 
