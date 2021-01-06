@@ -147,6 +147,12 @@
                             </div>
                         </div>
                         <div class="layui-form-item">
+                            <label class="layui-form-label">备案信息</label>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <input type="text" name="record" value="{{ $set->record }}" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
                             <div class="layui-input-block">
                                 <button class="layui-btn" lay-submit lay-filter="setWebsite">确认保存</button>
                             </div>

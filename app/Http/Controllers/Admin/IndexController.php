@@ -47,8 +47,9 @@ class IndexController extends AdminController
         }
 
         $born = null;
-        if (About::getOne(Code::ONE)->birthday) {
-            $birthday = date_create(About::getOne(Code::ONE)->birthday);
+        $setting = About::getOne(Code::ONE);
+        if ($setting->birthday) {
+            $birthday = date_create($setting->birthday);
             $now = date_create(date('Y-m-d H:i:s'));
             $interval = date_diff($birthday, $now);
             $born = $interval->format(('%r%y年%r%m月%r%d天%r%h时%r%i分'));

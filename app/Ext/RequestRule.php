@@ -80,6 +80,7 @@ trait RequestRule
         'messageCount'  => 'required|integer|min:0',
         'rssSize'       => 'required|integer|min:0',
         'template'      => 'required|string',
+        'record'        => 'required|string',
     ];
 
     public $carouselStoreUpdateRule = [
