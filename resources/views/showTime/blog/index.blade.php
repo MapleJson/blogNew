@@ -7,7 +7,21 @@
 @stop
 
 @section('article')
+    @if(!empty($adv))
+        <div class="popularize1000">
+            <a target="_blank" href="{{ $adv->href }}">
+                <img src="{{ $adv->img }}" />
+            </a>
+        </div>
+    @endif
     <main>
+        @if(!empty($adv680))
+            <div class="popularize680">
+                <a target="_blank" href="{{ $adv680->href }}">
+                    <img src="{{ $adv680->img }}" />
+                </a>
+            </div>
+        @endif
         @if(!empty($blogs))
             @foreach($blogs as $blog)
                 <div class="blogs" data-scroll-reveal="enter bottom over 1s">

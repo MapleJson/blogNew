@@ -7,6 +7,13 @@
 @stop
 
 @section('article')
+    @if(!empty($adv))
+        <div class="popularize1000">
+            <a target="_blank" href="{{ $adv->href }}">
+                <img src="{{ $adv->img }}" />
+            </a>
+        </div>
+    @endif
     @if(!empty($galleries) && $galleries != '[]')
         <div class="topbox">
             <ul>

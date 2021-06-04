@@ -8,7 +8,21 @@
 @stop
 
 @section('article')
+    @if(!empty($adv))
+        <div class="popularize1000">
+            <a target="_blank" href="{{ $adv->href }}">
+                <img src="{{ $adv->img }}" />
+            </a>
+        </div>
+    @endif
     <main>
+        @if(!empty($adv680))
+            <div class="popularize680">
+                <a target="_blank" href="{{ $adv680->href }}">
+                    <img src="{{ $adv680->img }}" />
+                </a>
+            </div>
+        @endif
         @if($links != '[]')
         <div class="whitebg">
             <h2 class="htitle">我的站群</h2>

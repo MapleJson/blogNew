@@ -5,6 +5,13 @@
 @stop
 
 @section('article')
+    @if(!empty($adv))
+        <div class="popularize1000">
+            <a target="_blank" href="{{ $adv->href }}">
+                <img src="{{ $adv->img }}" />
+            </a>
+        </div>
+    @endif
     @if(!empty($banners))
         <!--banner begin-->
         <div class="banner">
@@ -68,8 +75,7 @@
             @endif
 
             @if($blogs != '[]')
-                @foreach($blogs as $blog)
-
+                @foreach($blogs as $key => $blog)
                     <div class="blogs" data-scroll-reveal="enter bottom over 1s">
                         <h3 class="blogtitle">
                             <a href="{{ route("info", $blog->id) }}" target="_blank">
